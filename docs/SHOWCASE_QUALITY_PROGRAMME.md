@@ -4,7 +4,7 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 ## Status and gates
 | Phase | Status | Acceptance evidence |
 |---|---|---|
-| 00 Engineering baseline | Baseline verified; release reproducibility open until phase 08 | b9c24f925e159b2f2face40c48b4d811f2612496; CI 46004577690 and 46004569595 success; each candidate and hosted audit 314 checks, zero issues. Hosted route audit does not prove exact deployed commit. |
+| 00 Engineering baseline | Closed — verified starting gate; release reproducibility open until phase 08 | b9c24f925e159b2f2face40c48b4d811f2612496; CI 46004577690 and 46004569595 success; each candidate and hosted audit 314 checks, zero issues. Hosted route audit does not prove exact deployed commit. Additional evidence: [P00 baseline closure](P00_BASELINE_CLOSURE.md), [route inventory](P00_ROUTE_BASELINE.json), run 46005034589. |
 | 01 Data realism & integrity | In progress | Source-backed metric dictionary; all periods and campus/stream scopes reconcile; lead stage and date invariants; no unsupported stats; seeded tasks valid; separate current snapshot vs historical data; no chart misrepresentation. |
 | 02 Institutional website excellence | Pending | Page inventory reviewed; positive source-backed factual copy; consistent campus labels and contacts; no invented institutional achievements; distinct campus/programme pages; no placeholders presented as facts. |
 | 03 Premium UX/UI & design consistency | Pending | Consistent semantic icons, spacing, type, colours, card/table patterns; inspect representative page templates and page-level exceptions; actual analytical visuals only. |

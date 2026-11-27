@@ -1,0 +1,1136 @@
+{
+  "sourceCommit": "7028ce997dd92ad9b776b4d887203f62f0de9f0f",
+  "applicationBaseline": "b9c24f925e159b2f2face40c48b4d811f2612496",
+  "workflowRun": 46005034589,
+  "workflowJob": 140525948350,
+  "host": "https://sri-rama-digital-demo.web.app",
+  "widths": [
+    1440,
+    390
+  ],
+  "candidate": {
+    "checks": 314,
+    "uniqueRoutes": 157,
+    "http200": 314,
+    "correctPage": 314,
+    "oneHeading": 314,
+    "noindex": 314,
+    "overflowFailures": 0,
+    "brokenImages": 0,
+    "iconIssues": 0,
+    "runtimeErrors": 0
+  },
+  "hosted": {
+    "checks": 314,
+    "uniqueRoutes": 157,
+    "http200": 314,
+    "correctPage": 314,
+    "oneHeading": 314,
+    "noindex": 314,
+    "overflowFailures": 0,
+    "brokenImages": 0,
+    "iconIssues": 0,
+    "runtimeErrors": 0
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/",
+      "title": "Sri Raama | Intermediate Education & Exam Preparation Concept",
+      "heading": "Celebrating our students. Inspiring the next generation.",
+      "legacy": false
+    },
+    {
+      "id": "about",
+      "path": "/about/",
+      "title": "About | Sri Raama Concept",
+      "heading": "Education with direction.",
+      "legacy": false
+    },
+    {
+      "id": "founder",
+      "path": "/about/founder/",
+      "title": "Founder & Leadership | Sri Raama",
+      "heading": "The vision behind Sri Raama",
+      "legacy": false
+    },
+    {
+      "id": "team",
+      "path": "/about/team/",
+      "title": "Our Academic Team | Sri Raama",
+      "heading": "Meet the academic team",
+      "legacy": false
+    },
+    {
+      "id": "faculty-biology",
+      "path": "/about/team/biology/",
+      "title": "Biology faculty | Sri Raama",
+      "heading": "Biology faculty",
+      "legacy": false
+    },
+    {
+      "id": "faculty-chemistry",
+      "path": "/about/team/chemistry/",
+      "title": "Chemistry faculty | Sri Raama",
+      "heading": "Chemistry faculty",
+      "legacy": false
+    },
+    {
+      "id": "faculty-commerce",
+      "path": "/about/team/commerce/",
+      "title": "Commerce & economics faculty | Sri Raama",
+      "heading": "Commerce & economics faculty",
+      "legacy": false
+    },
+    {
+      "id": "faculty-mathematics",
+      "path": "/about/team/mathematics/",
+      "title": "Mathematics faculty | Sri Raama",
+      "heading": "Mathematics faculty",
+      "legacy": false
+    },
+    {
+      "id": "faculty-mentoring",
+      "path": "/about/team/mentoring/",
+      "title": "Academic mentoring team | Sri Raama",
+      "heading": "Academic mentoring team",
+      "legacy": false
+    },
+    {
+      "id": "faculty-physics",
+      "path": "/about/team/physics/",
+      "title": "Physics faculty | Sri Raama",
+      "heading": "Physics faculty",
+      "legacy": false
+    },
+    {
+      "id": "programmes",
+      "path": "/academics/",
+      "title": "Academic Programmes | Sri Raama Concept",
+      "heading": "Discover your academic pathway",
+      "legacy": false
+    },
+    {
+      "id": "bipc",
+      "path": "/academics/bipc/",
+      "title": "BiPC | Sri Raama Concept",
+      "heading": "BiPC pathway",
+      "legacy": false
+    },
+    {
+      "id": "bitsat",
+      "path": "/academics/bitsat/",
+      "title": "BITSAT | Sri Raama Concept",
+      "heading": "BITSAT",
+      "legacy": false
+    },
+    {
+      "id": "cec",
+      "path": "/academics/cec/",
+      "title": "CEC | Sri Raama Concept",
+      "heading": "CEC pathway",
+      "legacy": false
+    },
+    {
+      "id": "compare-programmes",
+      "path": "/academics/compare/",
+      "title": "Compare programmes | Sri Raama",
+      "heading": "Compare programmes",
+      "legacy": false
+    },
+    {
+      "id": "eapcet",
+      "path": "/academics/eapcet/",
+      "title": "TG EAPCET | Sri Raama Concept",
+      "heading": "TG EAPCET (EAMCET)",
+      "legacy": false
+    },
+    {
+      "id": "jee",
+      "path": "/academics/jee/",
+      "title": "JEE | Sri Raama Concept",
+      "heading": "JEE Main & Advanced",
+      "legacy": false
+    },
+    {
+      "id": "mec",
+      "path": "/academics/mec/",
+      "title": "MEC | Sri Raama Concept",
+      "heading": "MEC pathway",
+      "legacy": false
+    },
+    {
+      "id": "mpc",
+      "path": "/academics/mpc/",
+      "title": "MPC | Sri Raama Concept",
+      "heading": "MPC pathway",
+      "legacy": false
+    },
+    {
+      "id": "neet",
+      "path": "/academics/neet/",
+      "title": "NEET-UG | Sri Raama Concept",
+      "heading": "NEET-UG",
+      "legacy": false
+    },
+    {
+      "id": "achievements",
+      "path": "/achievements/",
+      "title": "Achievements | Sri Raama Concept",
+      "heading": "Celebrating academic achievements",
+      "legacy": false
+    },
+    {
+      "id": "results-bitsat",
+      "path": "/achievements/bitsat/",
+      "title": "BITSAT results | Sri Raama",
+      "heading": "BITSAT achievements",
+      "legacy": false
+    },
+    {
+      "id": "results-eapcet",
+      "path": "/achievements/eapcet/",
+      "title": "TG EAPCET (EAMCET) results | Sri Raama",
+      "heading": "TG EAPCET (EAMCET) achievements",
+      "legacy": false
+    },
+    {
+      "id": "results-ipe",
+      "path": "/achievements/ipe/",
+      "title": "Intermediate (IPE) results | Sri Raama",
+      "heading": "Intermediate (IPE) achievements",
+      "legacy": false
+    },
+    {
+      "id": "results-jee",
+      "path": "/achievements/jee/",
+      "title": "JEE Main & Advanced results | Sri Raama",
+      "heading": "JEE Main & Advanced achievements",
+      "legacy": false
+    },
+    {
+      "id": "results-neet",
+      "path": "/achievements/neet/",
+      "title": "NEET-UG results | Sri Raama",
+      "heading": "NEET-UG achievements",
+      "legacy": false
+    },
+    {
+      "id": "admissions",
+      "path": "/admissions/",
+      "title": "Admissions | Sri Raama Concept",
+      "heading": "Take the first step.",
+      "legacy": false
+    },
+    {
+      "id": "admission-faq",
+      "path": "/admissions/faq/",
+      "title": "Admissions FAQs | Sri Raama",
+      "heading": "Admissions FAQs",
+      "legacy": false
+    },
+    {
+      "id": "alumni",
+      "path": "/alumni/",
+      "title": "Alumni and mentoring | Sri Raama",
+      "heading": "Alumni and mentoring",
+      "legacy": false
+    },
+    {
+      "id": "life",
+      "path": "/campus-life/",
+      "title": "Campus Life | Sri Raama",
+      "heading": "Learning beyond the timetable.",
+      "legacy": false
+    },
+    {
+      "id": "campus-guide",
+      "path": "/campus-selection/",
+      "title": "Campus selection guide | Sri Raama",
+      "heading": "Campus selection guide",
+      "legacy": false
+    },
+    {
+      "id": "campuses",
+      "path": "/campuses/",
+      "title": "Campus Discovery | Sri Raama Concept",
+      "heading": "Find your campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-gokul-ac",
+      "path": "/campuses/gokul-ac/",
+      "title": "Gokul Boys A/C Residential Campus | Sri Raama",
+      "heading": "Gokul Boys A/C Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-gokul-non-ac",
+      "path": "/campuses/gokul-non-ac/",
+      "title": "Gokul Boys Non-A/C Residential Campus | Sri Raama",
+      "heading": "Gokul Boys Non-A/C Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-gokul-semi-ac",
+      "path": "/campuses/gokul-semi-ac/",
+      "title": "Gokul Boys Semi-A/C Residential Campus | Sri Raama",
+      "heading": "Gokul Boys Semi-A/C Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-gudimalkapur",
+      "path": "/campuses/gudimalkapur/",
+      "title": "Gudimalkapur Day Campus | Sri Raama",
+      "heading": "Gudimalkapur Day Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-kukatpally",
+      "path": "/campuses/kukatpally/",
+      "title": "Kukatpally Day Campus | Sri Raama",
+      "heading": "Kukatpally Day Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-mehdipatnam",
+      "path": "/campuses/mehdipatnam/",
+      "title": "Mehdipatnam Day Campus | Sri Raama",
+      "heading": "Mehdipatnam Day Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-miyapur-ac",
+      "path": "/campuses/miyapur-ac/",
+      "title": "Miyapur A/C Residential Campus | Sri Raama",
+      "heading": "Miyapur A/C Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-miyapur-girls",
+      "path": "/campuses/miyapur-girls/",
+      "title": "Miyapur Girls Semi-A/C & Non-A/C Residential Campus | Sri Raama",
+      "heading": "Miyapur Girls Semi-A/C & Non-A/C Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "campus-nizampet",
+      "path": "/campuses/nizampet/",
+      "title": "Nizampet Day & Semi Residential Campus | Sri Raama",
+      "heading": "Nizampet Day & Semi Residential Campus",
+      "legacy": false
+    },
+    {
+      "id": "careers",
+      "path": "/careers/",
+      "title": "Careers at Sri Raama | Sri Raama",
+      "heading": "Careers at Sri Raama",
+      "legacy": false
+    },
+    {
+      "id": "bitsat-long-term",
+      "path": "/coaching/bitsat-long-term/",
+      "title": "BITSAT Long-term coaching | Sri Raama",
+      "heading": "BITSAT Long-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "bitsat-short-term",
+      "path": "/coaching/bitsat-short-term/",
+      "title": "BITSAT Short-term coaching | Sri Raama",
+      "heading": "BITSAT Short-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "eapcet-long-term",
+      "path": "/coaching/eapcet-long-term/",
+      "title": "TG EAPCET Long-term coaching | Sri Raama",
+      "heading": "TG EAPCET Long-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "eapcet-short-term",
+      "path": "/coaching/eapcet-short-term/",
+      "title": "TG EAPCET Short-term coaching | Sri Raama",
+      "heading": "TG EAPCET Short-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "jee-long-term",
+      "path": "/coaching/jee-long-term/",
+      "title": "JEE Long-term coaching | Sri Raama",
+      "heading": "JEE Long-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "jee-short-term",
+      "path": "/coaching/jee-short-term/",
+      "title": "JEE Short-term coaching | Sri Raama",
+      "heading": "JEE Short-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "neet-long-term",
+      "path": "/coaching/neet-long-term/",
+      "title": "NEET-UG Long-term coaching | Sri Raama",
+      "heading": "NEET-UG Long-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "neet-short-term",
+      "path": "/coaching/neet-short-term/",
+      "title": "NEET-UG Short-term coaching | Sri Raama",
+      "heading": "NEET-UG Short-term coaching",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions",
+      "path": "/dashboard/admissions/",
+      "title": "Admissions Dashboard | Sri Raama Concept",
+      "heading": "Admissions operations",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions--analytics",
+      "path": "/dashboard/admissions/analytics/",
+      "title": "Conversion analytics | admissions | Sri Raama Digital",
+      "heading": "Conversion analytics",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions--followups",
+      "path": "/dashboard/admissions/followups/",
+      "title": "Follow-up queue | admissions | Sri Raama Digital",
+      "heading": "Follow-up queue",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions--leads",
+      "path": "/dashboard/admissions/leads/",
+      "title": "Lead register | admissions | Sri Raama Digital",
+      "heading": "Lead register",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions--pipeline",
+      "path": "/dashboard/admissions/pipeline/",
+      "title": "Pipeline & lead profiles | admissions | Sri Raama Digital",
+      "heading": "Pipeline & lead profiles",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-admissions--productivity",
+      "path": "/dashboard/admissions/productivity/",
+      "title": "Counsellor intelligence | admissions | Sri Raama Digital",
+      "heading": "Counsellor intelligence",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus",
+      "path": "/dashboard/campus/",
+      "title": "Centre Head | Sri Raama Digital",
+      "heading": "Centre Head workspace",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--academics",
+      "path": "/dashboard/campus/academics/",
+      "title": "Academic performance | campus | Sri Raama Digital",
+      "heading": "Academic performance",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--admissions",
+      "path": "/dashboard/campus/admissions/",
+      "title": "Campus admissions | campus | Sri Raama Digital",
+      "heading": "Campus admissions",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--attendance",
+      "path": "/dashboard/campus/attendance/",
+      "title": "Attendance & exceptions | campus | Sri Raama Digital",
+      "heading": "Attendance & exceptions",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--coordination",
+      "path": "/dashboard/campus/coordination/",
+      "title": "Faculty & timetable | campus | Sri Raama Digital",
+      "heading": "Faculty & timetable",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--enrolment",
+      "path": "/dashboard/campus/enrolment/",
+      "title": "Student register | campus | Sri Raama Digital",
+      "heading": "Student register",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--family",
+      "path": "/dashboard/campus/family/",
+      "title": "Parent support | campus | Sri Raama Digital",
+      "heading": "Parent support",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--finance",
+      "path": "/dashboard/campus/finance/",
+      "title": "Fees & collections | campus | Sri Raama Digital",
+      "heading": "Fees & collections",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--interventions",
+      "path": "/dashboard/campus/interventions/",
+      "title": "Student interventions | campus | Sri Raama Digital",
+      "heading": "Student interventions",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--operations",
+      "path": "/dashboard/campus/operations/",
+      "title": "Operations & actions | campus | Sri Raama Digital",
+      "heading": "Operations & actions",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--planning",
+      "path": "/dashboard/campus/planning/",
+      "title": "Academic planning | campus | Sri Raama Digital",
+      "heading": "Academic planning",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--recovery",
+      "path": "/dashboard/campus/recovery/",
+      "title": "Fee follow-ups | campus | Sri Raama Digital",
+      "heading": "Fee follow-ups",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--register",
+      "path": "/dashboard/campus/register/",
+      "title": "Academic records | campus | Sri Raama Digital",
+      "heading": "Academic records",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-campus--tools",
+      "path": "/dashboard/campus/tools/",
+      "title": "Assessment tools | campus | Sri Raama Digital",
+      "heading": "Assessment tools",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder",
+      "path": "/dashboard/founder/",
+      "title": "Founder Dashboard | Sri Raama Concept",
+      "heading": "Executive intelligence",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--academics",
+      "path": "/dashboard/founder/academics/",
+      "title": "Academic intelligence | founder | Sri Raama Digital",
+      "heading": "Academic intelligence",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--admissions",
+      "path": "/dashboard/founder/admissions/",
+      "title": "Admissions intelligence | founder | Sri Raama Digital",
+      "heading": "Admissions intelligence",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--attendance",
+      "path": "/dashboard/founder/attendance/",
+      "title": "Attendance | founder | Sri Raama Digital",
+      "heading": "Attendance",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--campuses",
+      "path": "/dashboard/founder/campuses/",
+      "title": "Campus comparison | founder | Sri Raama Digital",
+      "heading": "Campus comparison",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--capacity",
+      "path": "/dashboard/founder/capacity/",
+      "title": "Enrolment & capacity | founder | Sri Raama Digital",
+      "heading": "Enrolment & capacity",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--finance",
+      "path": "/dashboard/founder/finance/",
+      "title": "Fees & collections | founder | Sri Raama Digital",
+      "heading": "Fees & collections",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--growth",
+      "path": "/dashboard/founder/growth/",
+      "title": "Digital growth | founder | Sri Raama Digital",
+      "heading": "Digital growth",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-founder--planning",
+      "path": "/dashboard/founder/planning/",
+      "title": "Management actions | founder | Sri Raama Digital",
+      "heading": "Management actions",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-parent",
+      "path": "/dashboard/parent/",
+      "title": "Parent Dashboard | Sri Raama Concept",
+      "heading": "Parent progress report",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-parent--academics",
+      "path": "/dashboard/parent/academics/",
+      "title": "Academic progress | parent | Sri Raama Digital",
+      "heading": "Academic progress",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-parent--family",
+      "path": "/dashboard/parent/family/",
+      "title": "Reports & notices | parent | Sri Raama Digital",
+      "heading": "Reports & notices",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-parent--fees",
+      "path": "/dashboard/parent/fees/",
+      "title": "Fee statements | parent | Sri Raama Digital",
+      "heading": "Fee statements",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-parent--support",
+      "path": "/dashboard/parent/support/",
+      "title": "Feedback & support | parent | Sri Raama Digital",
+      "heading": "Feedback & support",
+      "legacy": false
+    },
+    {
+      "id": "dashboard-teacher",
+      "path": "/dashboard/teacher/",
+      "title": "Centre Head | Legacy workspace | Sri Raama Digital",
+      "heading": "Centre Head workspace",
+      "legacy": true
+    },
+    {
+      "id": "dashboard-teacher--performance",
+      "path": "/dashboard/teacher/performance/",
+      "title": "Batch performance | teacher | Sri Raama Digital",
+      "heading": "Academic performance",
+      "legacy": true
+    },
+    {
+      "id": "dashboard-teacher--planning",
+      "path": "/dashboard/teacher/planning/",
+      "title": "Lesson plans & assignments | teacher | Sri Raama Digital",
+      "heading": "Academic planning",
+      "legacy": true
+    },
+    {
+      "id": "dashboard-teacher--register",
+      "path": "/dashboard/teacher/register/",
+      "title": "Class register | teacher | Sri Raama Digital",
+      "heading": "Academic records",
+      "legacy": true
+    },
+    {
+      "id": "dashboard-teacher--tools",
+      "path": "/dashboard/teacher/tools/",
+      "title": "Assessment tools | teacher | Sri Raama Digital",
+      "heading": "Assessment tools",
+      "legacy": true
+    },
+    {
+      "id": "opportunities",
+      "path": "/digital-opportunities/",
+      "title": "Digital transformation opportunities | Sri Raama",
+      "heading": "Digital transformation opportunities",
+      "legacy": false
+    },
+    {
+      "id": "platform",
+      "path": "/digital-platform/",
+      "title": "Digital Platform | Sri Raama Concept",
+      "heading": "Explore the digital platform",
+      "legacy": false
+    },
+    {
+      "id": "free-centre",
+      "path": "/free-learning/",
+      "title": "Free learning centre | Sri Raama",
+      "heading": "Learn. Practise. Improve.",
+      "legacy": false
+    },
+    {
+      "id": "chapter-revision",
+      "path": "/free-learning/chapter-revision/",
+      "title": "Free chapter-wise revision | Sri Raama",
+      "heading": "Free chapter-wise revision",
+      "legacy": false
+    },
+    {
+      "id": "study-lab",
+      "path": "/free-learning/concept-lab/",
+      "title": "Interactive concept lab | Sri Raama",
+      "heading": "Interactive concept lab",
+      "legacy": false
+    },
+    {
+      "id": "daily-challenge",
+      "path": "/free-learning/daily-challenge/",
+      "title": "Free daily challenge | Sri Raama",
+      "heading": "Free daily challenge",
+      "legacy": false
+    },
+    {
+      "id": "study-dpp",
+      "path": "/free-learning/daily-practice/",
+      "title": "Daily practice sets | Sri Raama",
+      "heading": "Daily practice sets",
+      "legacy": false
+    },
+    {
+      "id": "free-flashcards",
+      "path": "/free-learning/flashcards/",
+      "title": "Free revision flashcards | Sri Raama",
+      "heading": "Free revision flashcards",
+      "legacy": false
+    },
+    {
+      "id": "formula-library",
+      "path": "/free-learning/formulas/",
+      "title": "Free formula and concept library | Sri Raama",
+      "heading": "Free formula and concept library",
+      "legacy": false
+    },
+    {
+      "id": "free-mocks",
+      "path": "/free-learning/mock-tests/",
+      "title": "Free mock tests | Sri Raama",
+      "heading": "Free mock tests",
+      "legacy": false
+    },
+    {
+      "id": "mock-bitsat",
+      "path": "/free-learning/mock-tests/bitsat/",
+      "title": "BITSAT free mini mock | Sri Raama",
+      "heading": "BITSAT — mini mock",
+      "legacy": false
+    },
+    {
+      "id": "mock-eapcet-biology",
+      "path": "/free-learning/mock-tests/eapcet-biology/",
+      "title": "TG EAPCET — Agriculture & Pharmacy free mini mock | Sri Raama",
+      "heading": "TG EAPCET — Agriculture & Pharmacy — mini mock",
+      "legacy": false
+    },
+    {
+      "id": "mock-eapcet",
+      "path": "/free-learning/mock-tests/eapcet/",
+      "title": "TG EAPCET — Engineering free mini mock | Sri Raama",
+      "heading": "TG EAPCET — Engineering — mini mock",
+      "legacy": false
+    },
+    {
+      "id": "mock-jee",
+      "path": "/free-learning/mock-tests/jee/",
+      "title": "JEE free mini mock | Sri Raama",
+      "heading": "JEE — mini mock",
+      "legacy": false
+    },
+    {
+      "id": "mock-neet",
+      "path": "/free-learning/mock-tests/neet/",
+      "title": "NEET-UG free mini mock | Sri Raama",
+      "heading": "NEET-UG — mini mock",
+      "legacy": false
+    },
+    {
+      "id": "free-practice",
+      "path": "/free-learning/practice/",
+      "title": "Free practice questions | Sri Raama",
+      "heading": "Free practice questions",
+      "legacy": false
+    },
+    {
+      "id": "study-hub",
+      "path": "/free-learning/study-materials/",
+      "title": "Study material library | Sri Raama",
+      "heading": "Study material library",
+      "legacy": false
+    },
+    {
+      "id": "study-biology",
+      "path": "/free-learning/study-materials/biology/",
+      "title": "Biology study materials | Sri Raama",
+      "heading": "Biology study materials",
+      "legacy": false
+    },
+    {
+      "id": "study-chemistry",
+      "path": "/free-learning/study-materials/chemistry/",
+      "title": "Chemistry study materials | Sri Raama",
+      "heading": "Chemistry study materials",
+      "legacy": false
+    },
+    {
+      "id": "study-english-reasoning",
+      "path": "/free-learning/study-materials/english-reasoning/",
+      "title": "English & reasoning study materials | Sri Raama",
+      "heading": "English & reasoning study materials",
+      "legacy": false
+    },
+    {
+      "id": "study-mathematics",
+      "path": "/free-learning/study-materials/mathematics/",
+      "title": "Mathematics study materials | Sri Raama",
+      "heading": "Mathematics study materials",
+      "legacy": false
+    },
+    {
+      "id": "study-physics",
+      "path": "/free-learning/study-materials/physics/",
+      "title": "Physics study materials | Sri Raama",
+      "heading": "Physics study materials",
+      "legacy": false
+    },
+    {
+      "id": "management",
+      "path": "/management/",
+      "title": "Management Workspace | Sri Raama Concept",
+      "heading": "Admissions operations",
+      "legacy": false
+    },
+    {
+      "id": "academy",
+      "path": "/online-academy/",
+      "title": "Online Academy | Sri Raama Concept",
+      "heading": "Big ambitions. Learn anywhere.",
+      "legacy": false
+    },
+    {
+      "id": "study-course-guide",
+      "path": "/online-academy/course-guide/",
+      "title": "Find your online programme | Sri Raama",
+      "heading": "Find your online programme",
+      "legacy": false
+    },
+    {
+      "id": "online-bitsat-annual",
+      "path": "/online-academy/courses/bitsat-annual/",
+      "title": "BITSAT Annual programme | Sri Raama Online",
+      "heading": "BITSAT Annual programme",
+      "legacy": false
+    },
+    {
+      "id": "online-bitsat-crash",
+      "path": "/online-academy/courses/bitsat-crash/",
+      "title": "BITSAT Crash course | Sri Raama Online",
+      "heading": "BITSAT Crash course",
+      "legacy": false
+    },
+    {
+      "id": "online-bitsat-test-series",
+      "path": "/online-academy/courses/bitsat-test-series/",
+      "title": "BITSAT Test series | Sri Raama Online",
+      "heading": "BITSAT Test series",
+      "legacy": false
+    },
+    {
+      "id": "online-eapcet-annual",
+      "path": "/online-academy/courses/eapcet-annual/",
+      "title": "TG EAPCET Annual programme | Sri Raama Online",
+      "heading": "TG EAPCET Annual programme",
+      "legacy": false
+    },
+    {
+      "id": "online-eapcet-crash",
+      "path": "/online-academy/courses/eapcet-crash/",
+      "title": "TG EAPCET Crash course | Sri Raama Online",
+      "heading": "TG EAPCET Crash course",
+      "legacy": false
+    },
+    {
+      "id": "online-eapcet-test-series",
+      "path": "/online-academy/courses/eapcet-test-series/",
+      "title": "TG EAPCET Test series | Sri Raama Online",
+      "heading": "TG EAPCET Test series",
+      "legacy": false
+    },
+    {
+      "id": "online-jee-annual",
+      "path": "/online-academy/courses/jee-annual/",
+      "title": "JEE Main & Advanced Annual programme | Sri Raama Online",
+      "heading": "JEE Main & Advanced Annual programme",
+      "legacy": false
+    },
+    {
+      "id": "online-jee-crash",
+      "path": "/online-academy/courses/jee-crash/",
+      "title": "JEE Main & Advanced Crash course | Sri Raama Online",
+      "heading": "JEE Main & Advanced Crash course",
+      "legacy": false
+    },
+    {
+      "id": "online-jee-test-series",
+      "path": "/online-academy/courses/jee-test-series/",
+      "title": "JEE Main & Advanced Test series | Sri Raama Online",
+      "heading": "JEE Main & Advanced Test series",
+      "legacy": false
+    },
+    {
+      "id": "online-neet-annual",
+      "path": "/online-academy/courses/neet-annual/",
+      "title": "NEET-UG Annual programme | Sri Raama Online",
+      "heading": "NEET-UG Annual programme",
+      "legacy": false
+    },
+    {
+      "id": "online-neet-crash",
+      "path": "/online-academy/courses/neet-crash/",
+      "title": "NEET-UG Crash course | Sri Raama Online",
+      "heading": "NEET-UG Crash course",
+      "legacy": false
+    },
+    {
+      "id": "online-neet-test-series",
+      "path": "/online-academy/courses/neet-test-series/",
+      "title": "NEET-UG Test series | Sri Raama Online",
+      "heading": "NEET-UG Test series",
+      "legacy": false
+    },
+    {
+      "id": "online-annual",
+      "path": "/online-academy/long-term/",
+      "title": "Long-term online programmes | Sri Raama",
+      "heading": "Build your foundation.",
+      "legacy": false
+    },
+    {
+      "id": "paper-lab",
+      "path": "/online-academy/question-paper-lab/",
+      "title": "Question-paper Lab | Sri Raama Online",
+      "heading": "Question-paper lab",
+      "legacy": false
+    },
+    {
+      "id": "exam",
+      "path": "/online-academy/sample-test/",
+      "title": "Sample Test | Sri Raama Concept",
+      "heading": "Practice. Reflect. Improve.",
+      "legacy": false
+    },
+    {
+      "id": "online-crash",
+      "path": "/online-academy/short-term/",
+      "title": "Short-term online programmes | Sri Raama",
+      "heading": "Make revision count.",
+      "legacy": false
+    },
+    {
+      "id": "student",
+      "path": "/online-academy/student/",
+      "title": "Student Workspace | Sri Raama Concept",
+      "heading": "Learning workspace",
+      "legacy": false
+    },
+    {
+      "id": "student--flashcards",
+      "path": "/online-academy/student/flashcards/",
+      "title": "Flashcards | student | Sri Raama Digital",
+      "heading": "Flashcards",
+      "legacy": false
+    },
+    {
+      "id": "student--history",
+      "path": "/online-academy/student/history/",
+      "title": "Mock test history | student | Sri Raama Digital",
+      "heading": "Mock test history",
+      "legacy": false
+    },
+    {
+      "id": "student--lessons",
+      "path": "/online-academy/student/lessons/",
+      "title": "My learning | student | Sri Raama Digital",
+      "heading": "My learning",
+      "legacy": false
+    },
+    {
+      "id": "student--planner",
+      "path": "/online-academy/student/planner/",
+      "title": "Study planner | student | Sri Raama Digital",
+      "heading": "Study planner",
+      "legacy": false
+    },
+    {
+      "id": "student--practice",
+      "path": "/online-academy/student/practice/",
+      "title": "Free mock tests | student | Sri Raama Digital",
+      "heading": "Free mock tests",
+      "legacy": false
+    },
+    {
+      "id": "student--progress",
+      "path": "/online-academy/student/progress/",
+      "title": "My progress | student | Sri Raama Digital",
+      "heading": "My progress",
+      "legacy": false
+    },
+    {
+      "id": "student--questions",
+      "path": "/online-academy/student/questions/",
+      "title": "Practice questions | student | Sri Raama Digital",
+      "heading": "Practice questions",
+      "legacy": false
+    },
+    {
+      "id": "student--resources",
+      "path": "/online-academy/student/resources/",
+      "title": "Study resources | student | Sri Raama Digital",
+      "heading": "Study resources",
+      "legacy": false
+    },
+    {
+      "id": "student--revision",
+      "path": "/online-academy/student/revision/",
+      "title": "Mistakes & bookmarks | student | Sri Raama Digital",
+      "heading": "Mistakes & bookmarks",
+      "legacy": false
+    },
+    {
+      "id": "online-tests",
+      "path": "/online-academy/test-series/",
+      "title": "Online test series | Sri Raama",
+      "heading": "Free mock tests",
+      "legacy": false
+    },
+    {
+      "id": "approach",
+      "path": "/our-approach/",
+      "title": "Our Educational Approach | Sri Raama",
+      "heading": "Learn with understanding. Grow with purpose.",
+      "legacy": false
+    },
+    {
+      "id": "education-approach",
+      "path": "/our-approach/education-approach/",
+      "title": "Our educational approach | Sri Raama",
+      "heading": "Our educational approach",
+      "legacy": false
+    },
+    {
+      "id": "learning-methodology",
+      "path": "/our-approach/learning-methodology/",
+      "title": "Learning methodology | Sri Raama",
+      "heading": "Learning methodology",
+      "legacy": false
+    },
+    {
+      "id": "parent-support",
+      "path": "/our-approach/parent-support/",
+      "title": "Parent support | Sri Raama",
+      "heading": "Parent support",
+      "legacy": false
+    },
+    {
+      "id": "teaching-methodology",
+      "path": "/our-approach/teaching-methodology/",
+      "title": "Teaching methodology | Sri Raama",
+      "heading": "Teaching methodology",
+      "legacy": false
+    },
+    {
+      "id": "training-assessment",
+      "path": "/our-approach/training-assessment/",
+      "title": "Training & assessment | Sri Raama",
+      "heading": "Training & assessment",
+      "legacy": false
+    },
+    {
+      "id": "resources",
+      "path": "/parent-guides/",
+      "title": "Parent Guides | Sri Raama Concept",
+      "heading": "Informed choices. Stronger futures.",
+      "legacy": false
+    },
+    {
+      "id": "campus-checklist",
+      "path": "/parent-guides/campus-checklist/",
+      "title": "What to ask on a campus visit | Sri Raama",
+      "heading": "What to ask on a campus visit",
+      "legacy": false
+    },
+    {
+      "id": "choose-stream",
+      "path": "/parent-guides/choose-stream/",
+      "title": "Choosing the right intermediate stream | Sri Raama",
+      "heading": "Choosing the right intermediate stream",
+      "legacy": false
+    },
+    {
+      "id": "exam-preparation",
+      "path": "/parent-guides/exam-preparation/",
+      "title": "Building a sustainable entrance-exam routine | Sri Raama",
+      "heading": "Building a sustainable entrance-exam routine",
+      "legacy": false
+    },
+    {
+      "id": "supporting-teenagers",
+      "path": "/parent-guides/supporting-teenagers/",
+      "title": "Supporting teenagers through exam pressure | Sri Raama",
+      "heading": "Supporting teenagers through exam pressure",
+      "legacy": false
+    },
+    {
+      "id": "partnerships",
+      "path": "/partnerships/",
+      "title": "Institutional partnerships | Sri Raama",
+      "heading": "Institutional partnerships",
+      "legacy": false
+    },
+    {
+      "id": "support",
+      "path": "/student-support/",
+      "title": "Student Support | Sri Raama",
+      "heading": "Support for the journey ahead.",
+      "legacy": false
+    },
+    {
+      "id": "academic-support",
+      "path": "/student-support/academic-support/",
+      "title": "Academic guidance | Sri Raama",
+      "heading": "Academic guidance",
+      "legacy": false
+    },
+    {
+      "id": "career-guidance",
+      "path": "/student-support/career-guidance/",
+      "title": "Career & higher education | Sri Raama",
+      "heading": "Career & higher education",
+      "legacy": false
+    },
+    {
+      "id": "wellbeing",
+      "path": "/student-support/wellbeing/",
+      "title": "Wellbeing & exam balance | Sri Raama",
+      "heading": "Wellbeing & exam balance",
+      "legacy": false
+    }
+  ]
+}
