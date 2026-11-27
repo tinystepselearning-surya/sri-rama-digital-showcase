@@ -3,7 +3,7 @@ import {campuses} from './institution';
 import {streams,subjects,months,annualFee,money,sum,ratio,type Learner} from './model';
 import type {OpsProps,Task} from './ops';
 // Explicit hypothetical capacity by stream and year; not institutional licensed seats.
-export const seatCapacity=(campus:string)=>{const i=campuses.findIndex(c=>c.name===campus);return i<0?0:30+5*Math.floor(i/2)};
+export const seatCapacity=(campus:string)=>{const i=campuses.findIndex(c=>c.name===campus);return i<0?0:[45,40,35,55,45,55,35,60,50][i]};
 export const capacityRows=(learners:Learner[])=>campuses.flatMap(c=>streams.flatMap(stream=>([1,2] as const).map(year=>{const enrolled=learners.filter(s=>s.campus===c.name&&s.stream===stream&&s.year===year).length,capacity=seatCapacity(c.name);return {campus:c.name,stream,year,enrolled,capacity,available:Math.max(0,capacity-enrolled),over:Math.max(0,enrolled-capacity)}})));
 export const feePosition=(s:Learner,week:number)=>{const f=annualFee(s),paid=sum(f.receipts.slice(0,week+1)),due=sum(f.schedule.slice(0,week+1));return {annual:f.billed,paid,overdue:Math.max(0,due-paid),future:f.billed-due}};
 const fmt=(n:number)=>n.toFixed(1)+'%';
