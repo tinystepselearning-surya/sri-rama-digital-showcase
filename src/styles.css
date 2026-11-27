@@ -138,3 +138,12 @@
 @media(min-width:741px) and (max-width:1000px){.enterprise .enterprise-rail nav a{min-height:44px}.enterprise .bi-filters select,.enterprise .bi-filters input:not([type=checkbox]),.enterprise .bi-panel select{min-height:44px;font-size:16px}.enterprise .bi-panel .btn,.enterprise .business-tabs button{min-height:44px}}
 @media(max-width:1000px){.site[data-page="paper-lab"] .bi-filters,.free-panel .bi-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.site[data-page="paper-lab"] .bi-filters label,.free-panel .bi-filters label{width:100%;min-width:0}.site[data-page="paper-lab"] .bi-filters select,.free-panel .bi-filters select{width:100%;min-width:0;max-width:100%;min-height:44px;font-size:16px;border-radius:6px}.site[data-page="paper-lab"] .panel>.btn,.site[data-page="paper-lab"] .paper-output .btn,.free-panel .btn,.free-options button{min-height:44px;white-space:normal;overflow-wrap:anywhere}.site[data-page="paper-lab"] .paper-output .actions{flex-wrap:wrap}}
 @media(max-width:480px){.site[data-page="paper-lab"] .bi-filters,.free-panel .bi-filters{grid-template-columns:minmax(0,1fr)}.site[data-page="paper-lab"] .panel>.btn,.site[data-page="paper-lab"] .paper-output .actions .btn{width:100%}}
+
+/* P06-B — visible keyboard focus, skip navigation and motion preference. */
+.skip-link{position:fixed;z-index:60;color:#142238;background:#fff;border:2px solid #142238;border-radius:4px}
+.site :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #183c78;outline-offset:2px;box-shadow:0 0 0 2px #fff}
+.site .enterprise-rail :is(a,button):focus-visible,.site .contact-dialog-head button:focus-visible{outline-color:#fff;box-shadow:0 0 0 2px #183c78;outline-offset:2px}
+.site .results-stage-art:focus-visible{outline:3px solid #fff;outline-offset:-5px;box-shadow:inset 0 0 0 2px #142238}
+.site main:focus{outline:none}
+.free-panel .question-chip{min-height:44px;min-width:44px}.free-panel .question-chip.current{outline:2px solid #183c78;outline-offset:1px}.free-panel .question-chip:focus-visible{outline:3px solid #183c78;outline-offset:3px;box-shadow:0 0 0 2px #fff}
+@media(prefers-reduced-motion:reduce){.site *,.site *::before,.site *::after{scroll-behavior:auto!important;transition-duration:0s!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}

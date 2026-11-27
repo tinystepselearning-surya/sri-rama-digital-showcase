@@ -1,7 +1,7 @@
 import {Icon,journalIcons} from './icons';
 import {streamGuidance,departmentGuidance,coachingGuidance} from './institution-content';
 import {LearningFramework,StreamLesson,MethodExample} from './pedagogy';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {articles,supportTopics} from './editorial';
 import {campuses,methods,coaching,faculty} from './institution';
 import {Dashboard,initialLeads,initialLearners} from './dashboard';
@@ -224,6 +224,7 @@ const questions = [
 ];
 export function App({initialPage='home'}:{initialPage?:Page}){
  const [page,setPage]=useState<Page>(initialPage);
+ const previousPage=useRef(page);
  const [leads,setLeads]=useState(initialLeads);
  const [admissionsBusiness,setAdmissionsBusiness]=useState('Campus admissions');
  const createEnquiry=(e:Enquiry)=>{setAdmissionsBusiness(e.mode==='Online coaching'?'Online coaching':'Campus admissions');setLeads(prev=>[...prev,{id:Math.max(100,...prev.map(l=>l.id))+1,programme:e.programme,campus:e.campus,courseKind:e.courseKind,product:e.exam==='Not specified'?undefined:e.exam+' coaching',status:'New',source:'Online',origin:e.origin,intent:e.intent,created:'2026-11-27',due:'2026-11-28',activity:['Sample enquiry created via '+e.origin+' · '+e.intent]}]);};
@@ -245,7 +246,7 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  useEffect(()=>{if(page!=='exam'||submitted||seconds<=0)return;const timer=window.setTimeout(()=>{setSeconds(s=>Math.max(0,s-1));if(seconds===1)setSubmitted(true)},1000);return()=>window.clearTimeout(timer)},[page,submitted,seconds]);
  const navigate=(next:Page)=>{if(next===page)return;history.pushState({},'',hrefFor(next));setPage(next);window.scrollTo(0,0);};
  useEffect(()=>{const change=()=>{setPage(readPage(location.pathname));window.scrollTo(0,0);};window.addEventListener('popstate',change);return()=>window.removeEventListener('popstate',change);},[]);
- useEffect(()=>{document.title=routes[page][1];document.querySelector('meta[name="description"]')?.setAttribute('content',routes[page][2]);},[page]);
+ useEffect(()=>{document.title=routes[page][1];document.querySelector('meta[name="description"]')?.setAttribute('content',routes[page][2]);if(previousPage.current!==page){previousPage.current=page;document.getElementById('main')?.focus({preventScroll:true});}},[page]);
  const handleNavigation=(e:React.MouseEvent)=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=(e.target as HTMLElement).closest('a');if(!a||a.target||a.hasAttribute('download'))return;const dest=new URL(a.href,location.href);if(dest.origin!==location.origin||dest.hash||dest.search)return;const next=Object.keys(routes).find(k=>routes[k][0]===dest.pathname);if(next){e.preventDefault();navigate(next);}};
  const score=questions.filter((q,i)=>answers[i]===q.correct).length;
  const {role,section}=splitWorkspace(page);
