@@ -76,7 +76,7 @@ const programmes = [
  {title:'Intermediate — BiPC',tag:'Medical pathway',description:'Biology, Physics and Chemistry with concept-driven examination preparation.',icon:'✚'},
  {title:'Competitive preparation',tag:'JEE · NEET · EAPCET',description:'Practice, revision and feedback designed around examination goals.',icon:'→'}
 ];
-const courses = [{title:'BITSAT preparation',detail:'Crash course concept',price:'Illustrative'},{title:'JEE preparation',detail:'Annual online programme',price:'₹9,999'},{title:'NEET preparation',detail:'Annual online programme',price:'₹9,999'},{title:'TG EAPCET revision',detail:'Crash course concept',price:'Illustrative'}];
+const courses = [{title:'BITSAT preparation',detail:'Crash course concept',price:'Illustrative'},{title:'JEE preparation',detail:'Annual online programme',price:'₹4,999'},{title:'NEET preparation',detail:'Annual online programme',price:'₹4,999'},{title:'TG EAPCET revision',detail:'Crash course concept',price:'Illustrative'}];
 const questions = [
   {
     "subject": "Mathematics",

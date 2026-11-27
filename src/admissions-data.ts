@@ -13,7 +13,7 @@ export const isOpenLead=(l:Lead)=>!['Converted','Closed'].includes(l.status);
 export const isDueLead=(l:Lead)=>isOpenLead(l)&&!l.followedUp&&!!l.due&&l.due<=sampleSnapshot;
 export const filterAdmissions=(leads:Lead[],business:string,campus:string,source:string,kind:string)=>leads.filter(l=>business==='Online coaching'?isDigital(l)&&(kind==='All courses'||courseKind(l)===kind):!isDigital(l)&&(campus==='All campuses'||l.campus===campus)&&(source==='All sources'||l.source===source));
 // Historical confirmed orders only: a session CRM stage edit never creates a receipt.
-export const confirmedOnlineOrders=()=>initialLeads.filter(l=>isDigital(l)&&l.status==='Converted').flatMap(l=>{const p=paidProducts.find(p=>p.title===l.product),month=Number(l.convertedAt?.slice(5,7))-5;if(!p||!Number.isInteger(month)||month<0||month>5)return [];return [{id:'ORDER-'+l.id,leadId:l.id,product:p.title,kind:p.kind,month,fee:p.fee}]});
+export const confirmedOnlineOrders=()=>initialLeads.filter(l=>isDigital(l)&&l.status==='Converted').flatMap(l=>{const p=paidProducts.find(p=>p.title===l.product),month=Number(l.convertedAt?.slice(5,7))-5;if(!p||!Number.isInteger(month)||month<0||month>5)return [];return [{id:'ORDER-'+l.id,leadId:l.id,product:p.title,kind:p.kind,month,fee:p.kind==='annual'?9999:p.fee}]});
 
 export const counsellorNames=['Counsellor 1','Counsellor 2','Counsellor 3','Counsellor 4','Counsellor 5','Unassigned'];
 export const counsellorOf=(l:Lead)=>l.owner||'Unassigned';
