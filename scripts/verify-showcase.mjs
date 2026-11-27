@@ -60,3 +60,5 @@ for(const [path,phrase] of [['/academics/mpc/','mathematical modelling'],['/acad
 
 // P02 educational-depth extension: real authored learning examples on existing paths.
 for(const [path,phrase] of [['/our-approach/','From understanding to independent application'],['/academics/mpc/','zero-product principle'],['/academics/bipc/','diffusion distance'],['/academics/mec/','Borrowing increases cash'],['/academics/cec/','next-best alternative forgone'],['/our-approach/training-assessment/','Feedback that changes the next step'],['/student-support/academic-support/','Ask a precise question']]){const html=await readFile('dist'+path+'index.html','utf8');assert.ok(html.includes(phrase),path+' educational depth');assert.match(html,/pedagogy-block/)};console.log('P02 educational framework and four original stream lesson previews verified.');
+
+const p03home=await readFile('dist/index.html','utf8');assert.match(p03home,/class="btn outline results-cta" href="\/achievements\/neet\/"/);assert.match(p03home,/View NEET-UG results/);assert.match(p03home,/Slide 1 of 4/);console.log('P03 verified first-slide destination and explicit result action in static output.');
