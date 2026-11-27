@@ -1,54 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { createRoot } from 'react-dom/client';
+/// <reference types="vite/client" />
+import React from 'react';
+import {createRoot,hydrateRoot} from 'react-dom/client';
+import {App,readPage} from './App';
 import './styles.css';
-
-const nav = [['home','Home'],['campuses','Campuses'],['programmes','Academics'],['academy','Online Academy'],['admissions','Admissions'],['exam','Sample Test'],['management','Management Demo']] as const;
-type Page = typeof nav[number][0];
-const readPage = (): Page => { const value = location.hash.slice(1); return nav.some(([p])=>p===value) ? value as Page : 'home'; };
-const programmes = [
- {title:'Intermediate — MPC',tag:'Engineering pathway',description:'Mathematics, Physics and Chemistry with a structured preparation pathway.',icon:'∑'},
- {title:'Intermediate — BiPC',tag:'Medical pathway',description:'Biology, Physics and Chemistry with concept-driven examination preparation.',icon:'✚'},
- {title:'Competitive preparation',tag:'JEE · NEET · EAPCET',description:'Practice, revision and feedback designed around examination goals.',icon:'↗'}
-];
-const courses = [{title:'JEE preparation',detail:'Annual online programme',price:'₹9,999'},{title:'NEET preparation',detail:'Annual online programme',price:'₹9,999'},{title:'TG EAPCET revision',detail:'Crash course concept',price:'Illustrative'}];
-const questions = [
- {q:'If x + 7 = 15, what is x?',opts:['6','7','8','9'],correct:2,why:'Subtract 7 from both sides: x = 8.'},
- {q:'What is the SI unit of force?',opts:['Joule','Newton','Watt','Pascal'],correct:1,why:'Force is measured in newtons (N).'},
- {q:'Which organelle is the main site of photosynthesis?',opts:['Nucleus','Ribosome','Mitochondrion','Chloroplast'],correct:3,why:'Chloroplasts contain chlorophyll and carry out photosynthesis.'}
-];
-type Lead = {id:number,programme:string,campus:string,status:string};
-const initialLeads: Lead[] = [
- {id:101,programme:'MPC',campus:'Campus 01',status:'New'},
- {id:102,programme:'BiPC',campus:'Campus 03',status:'Counselling'},
- {id:103,programme:'MPC',campus:'Campus 02',status:'Converted'}
-];
-function App(){
- const [page,setPage]=useState<Page>(readPage);
- const [menu,setMenu]=useState(false);
- const [leads,setLeads]=useState(initialLeads);
- const [programme,setProgramme]=useState('MPC');
- const [campus,setCampus]=useState('Campus 01');
- const [notice,setNotice]=useState('');
- const [course,setCourse]=useState('');
- const [answers,setAnswers]=useState<Record<number,number>>({});
- const [submitted,setSubmitted]=useState(false);
- const [examIndex,setExamIndex]=useState(0);
- useEffect(()=>{const change=()=>{setPage(readPage());setMenu(false);window.scrollTo(0,0);};window.addEventListener('hashchange',change);return()=>window.removeEventListener('hashchange',change);},[]);
- const score=questions.filter((q,i)=>answers[i]===q.correct).length;
- return <><div className="demo-banner">UNOFFICIAL CONCEPT PREVIEW <span>· Sample data only · No real applications or payments</span></div>
- <header><a className="brand" href="#home"><span className="mark">SR</span><span>SRI RAMA<small>EDUCATIONAL EXPERIENCE CONCEPT</small></span></a><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-expanded={menu} aria-controls="navigation">Menu</button><nav id="navigation" className={menu?'open':''} aria-label="Main navigation">{nav.map(([id,label])=><a key={id} href={'#'+id} aria-current={page===id?'page':undefined}>{label}</a>)}</nav></header>
- <main id="main">
- {page==='home'&&<><section className="hero"><div className="hero-inner"><div><span className="eyebrow">A proposed digital future</span><h1>Build your future.<br/><em>Go beyond.</em></h1><p>One connected experience for intermediate education, competitive examination preparation and digital learning.</p><div className="actions"><a className="btn gold" href="#programmes">Explore programmes →</a><a className="btn outline" href="#admissions">Try admissions demo</a></div><small>Independent concept demonstration, not an official institutional website.</small></div><div className="hero-art" aria-hidden="true"><div className="orbit one"></div><div className="orbit two"></div><div className="art-card"><span>LEARN • PRACTISE • PROGRESS</span><strong>Every step.<br/>A stronger future.</strong><div className="bars"><i></i><i></i><i></i><i></i><i></i></div><div className="art-bottom">A connected academic journey <b>↗</b></div></div></div></div></section>
- <section className="container stats">{[['09','Campus directory concept'],['03','Academic pathways'],['24/7','Digital learning concept'],['01','Connected experience']].map(([v,l])=><div key={l}><strong>{v}</strong><span>{l}</span></div>)}</section>
- <section className="container section"><span className="eyebrow ink">ACADEMIC PATHWAYS</span><h2>Choose your next chapter.</h2><p className="intro">Explore proposed programme experiences built for students and families.</p><div className="cards">{programmes.map(p=><article className="tile" key={p.title}><span className="symbol">{p.icon}</span><small>{p.tag}</small><h3>{p.title}</h3><p>{p.description}</p><a href="#programmes">Explore pathway →</a></article>)}</div></section>
- <section className="feature"><div className="container feature-inner"><div><span className="eyebrow">BEYOND THE CLASSROOM</span><h2>A digital academy, designed around the learner.</h2><p>See how online courses, practice tests and personalised feedback could work together.</p><a className="btn gold" href="#academy">Explore the academy →</a></div><div className="feature-list">{['Structured online programmes','Interactive practice assessments','Clear progress and feedback'].map(x=><div key={x}><b>✓</b> {x}</div>)}</div></div></section></>}
- {page==='campuses'&&<section className="container section"><PageIntro tag="Campus discovery" title="Find your campus." text="Illustrative directory layout. Campus names, addresses, facilities and contact details have not been verified."/><div className="cards">{Array.from({length:9},(_,i)=><article className="tile" key={i}><span className="symbol">▥</span><small>Illustrative listing</small><h3>Campus {String(i+1).padStart(2,'0')}</h3><p>Proposed dedicated campus profile, programmes and admissions information.</p><button className="text-button" onClick={()=>{setCampus('Campus '+String(i+1).padStart(2,'0'));location.hash='admissions';}}>Try campus enquiry →</button></article>)}</div></section>}
- {page==='programmes'&&<section className="container section"><PageIntro tag="Academics" title="Pathways with purpose." text="Proposed academic experience, not a statement of current institutional offerings."/><div className="cards">{programmes.map(p=><article className="tile" key={p.title}><span className="symbol">{p.icon}</span><small>{p.tag}</small><h3>{p.title}</h3><p>{p.description}</p><a href="#admissions">Explore admissions →</a></article>)}</div><a className="btn primary" href="#exam">Try a sample assessment →</a></section>}
- {page==='academy'&&<section className="container section"><PageIntro tag="Online academy" title="Learn wherever you are." text="Proposed online programmes. Prices are illustrative, not actual offers."/><div className="cards">{courses.map(c=><article className="tile" key={c.title}><small>{c.detail}</small><h3>{c.title}</h3><div className="price">{c.price}</div><p>Concept lessons, topic practice, revision and examination insights.</p><button className="btn primary" onClick={()=>setCourse(c.title)}>Preview enrolment</button></article>)}</div>{course&&<p role="status" className="notice">{course} selected. This is a simulated enrolment; no account or payment is created.</p>}<a href="#exam" className="text-button">Try a sample test →</a></section>}
- {page==='admissions'&&<section className="container section"><PageIntro tag="Admissions journey" title="Take the first step." text="Try a sample enquiry. Do not enter real personal information; this demo uses generated identifiers only."/><form className="panel" onSubmit={e=>{e.preventDefault();const id=104+leads.length-initialLeads.length;setLeads([...leads,{id,programme,campus,status:'New'}]);setNotice('Sample enquiry #'+id+' created. Open Management Demo to see it.');}}><label>Preferred programme<select value={programme} onChange={e=>setProgramme(e.target.value)}><option>MPC</option><option>BiPC</option><option>Online preparation</option></select></label><label>Preferred campus<select value={campus} onChange={e=>setCampus(e.target.value)}>{Array.from({length:9},(_,i)=><option key={i}>Campus {String(i+1).padStart(2,'0')}</option>)}</select></label><button className="btn primary" type="submit">Create sample enquiry</button>{notice&&<p role="status" className="notice">{notice}</p>}<a href="#management">View management demo →</a></form></section>}
- {page==='exam'&&<section className="container section"><PageIntro tag="Assessment experience" title="Practice. Reflect. Improve." text="A short illustrative assessment; not an official examination or syllabus-aligned mock test."/><div className="panel exam">{submitted?<><h2>{score} / {questions.length} correct</h2>{questions.map((q,i)=><div className="review" key={q.q}><strong>{q.q}</strong><p>Your answer: {answers[i]===undefined?'Not answered':q.opts[answers[i]]}. Correct: {q.opts[q.correct]}.</p><p>{q.why}</p></div>)}<button className="btn primary" onClick={()=>{setAnswers({});setExamIndex(0);setSubmitted(false);}}>Try again</button></>:<><small>QUESTION {examIndex+1} OF {questions.length} · {Object.keys(answers).length} answered</small><h3>{questions[examIndex].q}</h3><fieldset><legend className="sr-only">Choose an answer</legend>{questions[examIndex].opts.map((opt,i)=><label className="option" key={opt}><input type="radio" name={'q'+examIndex} checked={answers[examIndex]===i} onChange={()=>setAnswers({...answers,[examIndex]:i})}/>{opt}</label>)}</fieldset><div className="actions"><button className="btn secondary" disabled={examIndex===0} onClick={()=>setExamIndex(examIndex-1)}>Previous</button>{examIndex<questions.length-1?<button className="btn primary" onClick={()=>setExamIndex(examIndex+1)}>Next →</button>:<button className="btn primary" onClick={()=>setSubmitted(true)}>Submit sample test</button>}</div></>}</div></section>}
- {page==='management'&&<section className="container section"><PageIntro tag="Management workspace" title="A clearer view of admissions." text="Illustrative records and session-only interactions. Nothing is sent to a server."/><div className="stats dashboard">{[['Sample enquiries',leads.length],['Counselling',leads.filter(l=>l.status==='Counselling').length],['Converted',leads.filter(l=>l.status==='Converted').length]].map(([l,v])=><div key={l}><strong>{v}</strong><span>{l}</span></div>)}</div><div className="panel table-wrap"><h3>Sample enquiry pipeline</h3><table><thead><tr><th>Reference</th><th>Programme</th><th>Campus</th><th>Status</th></tr></thead><tbody>{leads.map(l=><tr key={l.id}><td>DEMO-{l.id}</td><td>{l.programme}</td><td>{l.campus}</td><td><select aria-label={'Status for demo '+l.id} value={l.status} onChange={e=>setLeads(leads.map(x=>x.id===l.id?{...x,status:e.target.value}:x))}><option>New</option><option>Counselling</option><option>Converted</option></select></td></tr>)}</tbody></table></div></section>}
- </main><footer><div className="container footer-inner"><div><strong>SRI RAMA | Concept showcase</strong><p>Unofficial, independent proof of concept. Not an admissions portal.</p></div><a href="#home">Return to home ↑</a></div></footer></>;
-}
-function PageIntro({tag,title,text}:{tag:string,title:string,text:string}){return <><span className="eyebrow ink">{tag}</span><h1 className="page-title">{title}</h1><p className="intro">{text}</p></>;}
-createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
+const root=document.getElementById('root')!;
+const node=<React.StrictMode><App initialPage={readPage(location.pathname)}/></React.StrictMode>;
+if(root.hasChildNodes()&&!import.meta.env.DEV)hydrateRoot(root,node);else createRoot(root).render(node);

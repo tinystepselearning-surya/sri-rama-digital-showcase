@@ -1,20 +1,5 @@
-# Sri Rama Digital Experience — proof of concept
+# Sri Raama digital experience — independent concept
 
-This public repository contains an unofficial independent concept, not a live service or endorsed institution website.
+V2 uses the owner-supplied official logo and selected classroom and achievement imagery. Approval to use the published material was communicated by the repository owner. Do not imply that historical results are current or independently verified. Only six selected media files enter public/media; originals with hall-ticket identifiers remain outside the hosting output pending redaction. No real enrolment, payment, analytics, or backend. All enquiry records are synthetic and session-only. Seven illustrative location profiles do not assert an actual campus count. Native links, static rendered HTML routes, distinct titles and descriptions, semantic layout and skip link are intended publication improvements; verify actual build and browser behaviour. Noindex is not access control. The source repository is public, including uploaded originals; prefer restricted access if student identifiers or confidential materials are present. No confidential audit or proposal is committed.
 
-## First iteration
-- Responsive institutional homepage and placeholder nine-campus directory.
-- Illustrative academic pathways and online programme catalogue.
-- Sample enquiry with generated reference, linked in-memory management workflow.
-- Three-question sample assessment with answer feedback.
-- Firebase Hosting configuration for the isolated sri-rama-digital-demo project.
-- Search-index discouragement via meta and response header. This is not access control.
-
-## Boundaries
-No real student information, verified campus claims, institutional logo, payment, external AI, analytics, Firebase SDK or database. Session changes disappear on reload. No confidential findings or commercial terms are published. All prices are illustrative.
-
-## Remaining
-Verify the actual dependency install and production build, mobile and desktop navigation, functional journeys and hosting preview before deployment. Add student dashboard and clearly labelled question-paper prototype in later iterations. Generate and commit a lockfile before establishing deterministic CI. Do not deploy to any other Firebase project.
-
-## Local development
-Use Node 22.22.1, npm install, npm run dev, npm run build, npm run preview.
+Build: npm install; npm run build. Preview: npm run preview. Verify direct routes, browser back/forward, hydration, sample enquiries and assessment scoring. Lockfile and CI pending. Deploy only to sri-rama-digital-demo after review.
