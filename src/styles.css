@@ -147,3 +147,42 @@
 .site main:focus{outline:none}
 .free-panel .question-chip{min-height:44px;min-width:44px}.free-panel .question-chip.current{outline:2px solid #183c78;outline-offset:1px}.free-panel .question-chip:focus-visible{outline:3px solid #183c78;outline-offset:3px;box-shadow:0 0 0 2px #fff}
 @media(prefers-reduced-motion:reduce){.site *,.site *::before,.site *::after{scroll-behavior:auto!important;transition-duration:0s!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+/* P06-D — presentation system: institutional editorial, learning surfaces and executive workspace. */
+.site{--presentation-border:#dce3e0;--presentation-radius:10px;--presentation-shadow:0 3px 12px #14223809}
+.site:not(.enterprise) .page-title{font-size:clamp(32px,4.3vw,58px);letter-spacing:-.035em;max-width:25ch;margin:12px 0 16px}
+.site:not(.enterprise) .intro{margin-bottom:clamp(22px,3vw,34px)}
+.site:not(.enterprise) .section-head{align-items:start;gap:16px 30px}
+.site:not(.enterprise) .section-head h2{line-height:1.16}
+.site:not(.enterprise) .section-head p{align-self:center}
+.site:not(.enterprise) .section-head>.text-button{align-self:center}
+.site:not(.enterprise) .panel,.site:not(.enterprise) .course-offer{border-radius:var(--presentation-radius);box-shadow:var(--presentation-shadow)}
+.site:not(.enterprise) .image-story img,.site:not(.enterprise) .programme-list img,.site:not(.enterprise) .story-split>img{border-radius:6px}
+.site:not(.enterprise) .results-stage{border-radius:8px;overflow:hidden}
+.site:not(.enterprise) .exam-launch>a{padding:clamp(12px,1.6vw,20px);box-shadow:var(--presentation-shadow)}
+.site:not(.enterprise) .campus-story{padding:clamp(16px,2vw,24px);border-radius:var(--presentation-radius);background:#f8f7f4}
+.academy-nav{gap:8px;align-items:center;padding:0 0 12px;margin-bottom:26px}
+.academy-nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;border:1px solid #dbe3ed;border-radius:6px;background:#fff;color:#183e74;line-height:1.3;text-align:center}
+.academy-nav a[aria-current=page]{background:#183e74;border-color:#183e74;color:#fff}
+.academy-nav a:hover:not([aria-current=page]){background:#edf3fa;border-color:#8fa6c4;color:#183e74}
+.course-market article{display:flex;flex-direction:column;min-width:0;box-shadow:var(--presentation-shadow)}
+.course-market-art{min-height:164px;justify-content:center}
+.course-market-art strong{line-height:1.17;overflow-wrap:anywhere}
+.course-market-body{display:flex;flex-direction:column;flex:1;min-width:0;gap:12px}
+.course-market-body h3{line-height:1.35}
+.course-market-bottom{margin-top:auto;border-top:1px solid #e3e8ee;padding-top:14px}
+.course-market-bottom>strong,.course-offer strong{font-variant-numeric:tabular-nums}
+.free-grid>a,.study-subjects>a{display:flex;flex-direction:column;align-items:flex-start;min-width:0;box-shadow:var(--presentation-shadow);border-radius:var(--presentation-radius)}
+.free-grid>a b,.study-subjects>a b{margin-top:auto;padding-top:10px}
+.free-panel h2,.study-card h2,.study-practice h2{line-height:1.35;overflow-wrap:anywhere}
+.free-panel .free-options button,.study-options button{line-height:1.5}
+.free-panel .free-feedback,.study-feedback,.study-explanation{border-radius:6px}
+.enterprise .workspace-context{padding:8px 12px;background:#e9eef5;border-radius:6px;line-height:1.5}
+.enterprise .bi-kpi,.enterprise .bi-panel{border-radius:var(--presentation-radius);box-shadow:var(--presentation-shadow)}
+.enterprise .bi-kpi{border-top:3px solid #647c9e}
+.enterprise .bi-kpi strong{line-height:1.25;letter-spacing:-.025em}
+.enterprise .bi-panel h2,.enterprise .bi-summary h2{font-size:18px;line-height:1.35}
+.enterprise .bi-panel p{line-height:1.6}
+.enterprise .bi-panel .review{padding:12px 0;border-bottom:1px solid #e0e6ee}
+.enterprise .bi-panel .review:last-child{border-bottom:0}
+@media(max-width:740px){.site:not(.enterprise) .page-title{font-size:clamp(30px,7vw,42px)}.site:not(.enterprise) .results-stage{border-radius:0}.site:not(.enterprise) .section-head{gap:12px}.academy-nav{gap:6px}.academy-nav a{font-size:13px;padding:8px 10px}.course-market-art{min-height:132px;padding:16px}.course-market-body{padding:16px}.enterprise .bi-panel h2,.enterprise .bi-summary h2{font-size:17px}}
