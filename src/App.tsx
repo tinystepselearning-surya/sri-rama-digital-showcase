@@ -4,6 +4,7 @@ import {campuses,methods,coaching,faculty} from './institution';
 import {Dashboard,initialLeads,initialLearners} from './dashboard';
 import {Academy,onlineRoutes} from './academy';
 import {PaperLab} from './learning';
+import {InstitutionHeader} from './header';
 import {ContactLayer,EnquiryWizard,type Enquiry} from './contact';
 import {PublicExtras,extraRoutes} from './public-extras';
 import type {Task} from './ops';
@@ -217,7 +218,6 @@ const questions = [
 ];
 export function App({initialPage='home'}:{initialPage?:Page}){
  const [page,setPage]=useState<Page>(initialPage);
- const [menu,setMenu]=useState(false);
  const [leads,setLeads]=useState(initialLeads);
  const createEnquiry=(e:Enquiry)=>setLeads(prev=>[...prev,{id:Math.max(100,...prev.map(l=>l.id))+1,programme:e.programme,campus:e.campus,courseKind:e.courseKind,product:e.exam==='Not specified'?undefined:e.exam+' coaching',status:'New',source:'Online',origin:e.origin,intent:e.intent,created:'2026-11-27',due:'2026-11-28',activity:['Sample enquiry created via '+e.origin+' · '+e.intent]}]);
  const [freeEvents,setFreeEvents]=useState<FreeEvent[]>([]);
@@ -235,16 +235,15 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const [seconds,setSeconds]=useState(900);
  const [review,setReview]=useState<number[]>([]);
  useEffect(()=>{if(page!=='exam'||submitted||seconds<=0)return;const timer=window.setTimeout(()=>{setSeconds(s=>Math.max(0,s-1));if(seconds===1)setSubmitted(true)},1000);return()=>window.clearTimeout(timer)},[page,submitted,seconds]);
- const navigate=(next:Page)=>{if(next===page){setMenu(false);return;}history.pushState({},'',hrefFor(next));setPage(next);setMenu(false);window.scrollTo(0,0);};
- useEffect(()=>{const change=()=>{setPage(readPage(location.pathname));setMenu(false);window.scrollTo(0,0);};window.addEventListener('popstate',change);return()=>window.removeEventListener('popstate',change);},[]);
+ const navigate=(next:Page)=>{if(next===page)return;history.pushState({},'',hrefFor(next));setPage(next);window.scrollTo(0,0);};
+ useEffect(()=>{const change=()=>{setPage(readPage(location.pathname));window.scrollTo(0,0);};window.addEventListener('popstate',change);return()=>window.removeEventListener('popstate',change);},[]);
  useEffect(()=>{document.title=routes[page][1];document.querySelector('meta[name="description"]')?.setAttribute('content',routes[page][2]);},[page]);
  const handleNavigation=(e:React.MouseEvent)=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=(e.target as HTMLElement).closest('a');if(!a||a.target||a.hasAttribute('download'))return;const dest=new URL(a.href,location.href);if(dest.origin!==location.origin||dest.hash||dest.search)return;const next=Object.keys(routes).find(k=>routes[k][0]===dest.pathname);if(next){e.preventDefault();navigate(next);}};
  const score=questions.filter((q,i)=>answers[i]===q.correct).length;
  const {role,section}=splitWorkspace(page);
  const internal=role==='management'||role==='platform'||role==='student'||role.startsWith('dashboard-');
  if(internal)return <div className="site enterprise" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to workspace</a><main id="main" tabIndex={-1}><Dashboard key={role} section={section} page={role==='management'?'dashboard-admissions':role} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor} freeEvents={freeEvents} recordFree={recordFree} tasks={tasks} setTasks={setTasks}/></main></div>;
- return <div className="site" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to main content</a><div className="utility"><div className="container utility-inner"><span>INSTITUTIONAL WEBSITE SHOWCASE</span><div><a href={hrefFor('resources')}>For parents</a><a href={hrefFor('founder')}>Leadership</a><a href={hrefFor('support')}>For students</a><a href={hrefFor('platform')}>Explore Digital Platform ↗</a></div></div></div>
- <header><div className="container masthead"><a className="brand" href={hrefFor('home')}><img className="brand-image" src="/media/logo.jpg" width={300} height={108} alt="Sri Raama Educational Institutions — Everything You Need to Succeed"/></a><span className="masthead-line">Intermediate education & competitive examination preparation</span><a className="btn primary header-cta" href={hrefFor('admissions')}>Admissions ↗</a><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-expanded={menu} aria-controls="navigation">Menu {menu?'−':'+'}</button></div><nav id="navigation" className={menu?'open':''} aria-label="Main navigation"><div className="container nav-inner">{nav.map(([id,label])=><a key={id} href={hrefFor(id)} aria-current={page===id?'page':undefined}>{label}</a>)}</div></nav><nav className="exam-nav" aria-label="Examination pathways"><div className="container">{[['jee','JEE Main & Advanced'],['neet','NEET-UG'],['eapcet','TG EAPCET / EAMCET'],['bitsat','BITSAT'],['results-ipe','Intermediate results']].map(([id,t])=><a key={id} href={hrefFor(id)} aria-current={page===id?'page':undefined}>{t}</a>)}</div></nav></header>
+ return <div className="site" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to main content</a><InstitutionHeader page={page} hrefFor={hrefFor}/>
  <main id="main" tabIndex={-1}>
  {page==='home'&&<><ResultsHero hrefFor={hrefFor}/>
  <section className="quick-links"><div className="container pathway-strip">{[['01','Find your programme','programmes'],['02','Explore our locations','campuses'],['03','Discover student support','support'],['04','Learn online','academy']].map(([n,t,p])=><a key={n} href={hrefFor(p)}><span>{n}</span><strong>{t}</strong><b>↗</b></a>)}</div></section>
