@@ -108,3 +108,5 @@
 
 /* Release quality: meaningful shortcuts and department presentation, no ornamental progress. */
 .pathway-strip .ui-icon{width:25px;height:25px;color:var(--red)}.programme-index .ui-icon{width:32px;height:32px}.department-visual{min-height:220px;display:grid;place-content:center;justify-items:center;gap:16px;background:#eef2ec;color:#265844;padding:24px;text-align:center;border:1px solid #dce4db;border-radius:8px}.department-visual .ui-icon{width:70px;height:70px;stroke-width:1.3}.department-visual strong{font-size:17px;max-width:28ch}.learning-preview p{line-height:1.6}@media(max-width:740px){.pathway-strip .ui-icon{width:20px;height:20px}.programme-index .ui-icon{width:25px;height:25px}.department-visual{min-height:160px}.department-visual .ui-icon{width:48px;height:48px}}
+
+.campus-story-top .ui-icon{width:27px;height:27px;color:var(--red)}.footer-brand>a{display:block;margin-top:10px;font-size:12px;line-height:1.5;color:inherit}

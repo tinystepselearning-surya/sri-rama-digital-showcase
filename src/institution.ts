@@ -85,7 +85,7 @@ export const methods = [
   {
     "id": "education-approach",
     "title": "Our educational approach",
-    "tag": "01 / Philosophy",
+    "tag": "Educational philosophy",
     "intro": "Conceptual understanding, independent thinking and purposeful preparation.",
     "items": [
       [
@@ -105,7 +105,7 @@ export const methods = [
   {
     "id": "teaching-methodology",
     "title": "Teaching methodology",
-    "tag": "02 / Teaching",
+    "tag": "Classroom practice",
     "intro": "A proposed classroom cycle that connects explanation, practice and feedback.",
     "items": [
       [
@@ -125,7 +125,7 @@ export const methods = [
   {
     "id": "learning-methodology",
     "title": "Learning methodology",
-    "tag": "03 / Learning",
+    "tag": "Independent learning",
     "intro": "A practical framework for learning, revision and reflection.",
     "items": [
       [
@@ -145,7 +145,7 @@ export const methods = [
   {
     "id": "training-assessment",
     "title": "Training & assessment",
-    "tag": "04 / Preparation",
+    "tag": "Assessment & revision",
     "intro": "A proposed assessment-led approach to competitive exam preparation.",
     "items": [
       [
@@ -165,7 +165,7 @@ export const methods = [
   {
     "id": "parent-support",
     "title": "Parent support",
-    "tag": "05 / Partnership",
+    "tag": "Family partnership",
     "intro": "Clear communication and practical guidance for families.",
     "items": [
       [
