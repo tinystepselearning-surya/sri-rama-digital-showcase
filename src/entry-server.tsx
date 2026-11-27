@@ -17,3 +17,5 @@ export {buildSampleTasks} from './demo-operations';
 
 export {attendanceRate,assessmentRate,learnerScore,scheduledSessions,assessmentMaximum} from './model';
 export {confirmedOnlineOrders,filterAdmissions,isOpenLead,isDueLead,campusStages,onlineStages,isDigital,courseKind} from './admissions-data';
+
+export {learnerAssignments,assignmentDone,toggleAssignment} from './assignment-state';
