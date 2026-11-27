@@ -42,3 +42,6 @@ Concierge candidate passed build/static checks. Browser stopped on an ambiguous 
 
 ## Content and CRM refinement
 Expanded the authored shared question bank to 36 and flashcards to 24. Mini-mocks reuse relevant subject questions; not full syllabus banks. Added optional closure reason capture for closed leads, explicitly unknown historical reasons and aggregate closure analysis. Undecided campus filter is supported. Verification updated for bank counts and unique IDs.
+
+## Real-world operating model refinement
+Annual net campus fee per learner, instalment schedule May–April, historical cash receipts through October, separate overdue and future scheduled obligations, no revenue forecast. Indian currency formatter uses crores at ₹1 crore. Historical confirmed online orders linked to converted synthetic digital leads; live CRM changes do not book money. Separate campus admissions (website/walk-in) and online coaching (annual/crash/undecided) tabs, simplified overview and paginated register. Digital growth six-month fictional traffic/engagement with CRM and order-derived metrics. Management actions replace unsupported cost/profit scenarios. Parent annual statement and operational copy aligned. Financial values are illustrative, not actual fees. No production changes.

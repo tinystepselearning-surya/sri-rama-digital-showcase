@@ -219,7 +219,7 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const [page,setPage]=useState<Page>(initialPage);
  const [menu,setMenu]=useState(false);
  const [leads,setLeads]=useState(initialLeads);
- const createEnquiry=(e:Enquiry)=>setLeads(prev=>[...prev,{id:Math.max(100,...prev.map(l=>l.id))+1,programme:e.programme,campus:e.campus,product:e.exam==='Not specified'?undefined:e.exam+' coaching',status:'New',source:'Online',origin:e.origin,intent:e.intent,created:'2026-11-27',due:'2026-11-28',activity:['Sample enquiry created via '+e.origin+' · '+e.intent]}]);
+ const createEnquiry=(e:Enquiry)=>setLeads(prev=>[...prev,{id:Math.max(100,...prev.map(l=>l.id))+1,programme:e.programme,campus:e.campus,courseKind:e.courseKind,product:e.exam==='Not specified'?undefined:e.exam+' coaching',status:'New',source:'Online',origin:e.origin,intent:e.intent,created:'2026-11-27',due:'2026-11-28',activity:['Sample enquiry created via '+e.origin+' · '+e.intent]}]);
  const [freeEvents,setFreeEvents]=useState<FreeEvent[]>([]);
  const [tasks,setTasks]=useState<Task[]>([]);
  const recordFree=(e:FreeEvent)=>setFreeEvents(prev=>[...prev,e]);
