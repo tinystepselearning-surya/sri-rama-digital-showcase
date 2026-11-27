@@ -39,3 +39,6 @@ Public programme comparison, location guide, FAQs, careers/alumni/partnership co
 
 ## Verification follow-up
 Concierge candidate passed build/static checks. Browser stopped on an ambiguous NEET-UG button locator (background results carousel and open dialog). Scoped the dialog test to the native modal; added quick contact and admission shortcut open/close checks. No runtime errors observed prior to that locator failure; full hydration and mobile verification remains required.
+
+## Content and CRM refinement
+Expanded the authored shared question bank to 36 and flashcards to 24. Mini-mocks reuse relevant subject questions; not full syllabus banks. Added optional closure reason capture for closed leads, explicitly unknown historical reasons and aggregate closure analysis. Undecided campus filter is supported. Verification updated for bank counts and unique IDs.
