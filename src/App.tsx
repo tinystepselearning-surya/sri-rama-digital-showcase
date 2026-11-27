@@ -44,7 +44,7 @@ export const routes:Record<string,readonly string[]>={
  'dashboard-founder':['/dashboard/founder/','Founder Dashboard | Sri Raama Concept','Explore synthetic executive intelligence across campuses.'],
  'dashboard-admissions':['/dashboard/admissions/','Admissions Dashboard | Sri Raama Concept','Explore a connected synthetic admissions pipeline.'],
  'dashboard-campus':['/dashboard/campus/','Centre Head | Sri Raama Digital','Campus-level academic and operational supervision.'],
- 'dashboard-teacher':['/dashboard/teacher/','Centre Head | Sri Raama Digital','Legacy route for campus-level academic supervision.'],
+ 'dashboard-teacher':['/dashboard/teacher/','Centre Head | Legacy workspace | Sri Raama Digital','Legacy route for campus-level academic supervision.'],
  'dashboard-parent':['/dashboard/parent/','Parent Dashboard | Sri Raama Concept','Explore a fictional learner progress report.'],
  achievements:['/achievements/','Achievements | Sri Raama Concept','Explore a sample academic achievements archive with institution-supplied posters.'],
  student:['/online-academy/student/','Student Workspace | Sri Raama Concept','Explore an illustrative learning dashboard.'],
