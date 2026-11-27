@@ -261,3 +261,39 @@
 
 /* Compact native campus selector in shared enquiry wizard. */
 .wizard-campus-field{display:grid;gap:7px;margin:14px 0;min-width:0}.wizard-campus-field>span{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#142238;font-size:13px;font-weight:700}.wizard-campus-field small{font-size:11px;color:#52647a;font-weight:400}.wizard-campus-field select{box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:46px;padding:10px;border:1px solid #ccd6e0;border-radius:7px;background:#fff;color:#142238;font:inherit;font-size:16px}
+
+/* P08 physical-phone review: compact editorial achievement previews, no coloured letterboxing. */
+.site:not(.enterprise) .stable-results-controls{gap:12px;padding-block:0 8px}
+.site:not(.enterprise) .stable-results-stage{margin:0;max-width:100%;width:100%;height:clamp(240px,28vw,400px);min-height:0;background:#fff;border:1px solid #e4e0da;border-radius:10px;box-shadow:0 2px 12px #14223808;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr);padding:8px;gap:0}
+.site:not(.enterprise) .stable-results-stage[data-orientation=portrait]{grid-template-columns:minmax(0,1fr) minmax(0,48%);padding:12px 18px;gap:16px;background:#f8f9fb}
+.stable-results-stage .results-stage-art{max-width:none;min-width:0;height:100%;min-height:0;width:100%;display:grid;place-items:center}
+.stable-results-stage .results-stage-art img{display:block;width:100%;height:100%;max-height:100%;min-height:0;object-fit:contain;object-position:center}
+.achievement-preview-copy{align-self:center;min-width:0;max-width:480px;padding:12px 20px;color:#142238}
+.achievement-preview-copy small{display:block;font-size:11px;letter-spacing:.08em;font-weight:700;color:#861f35}
+.achievement-preview-copy h2{font-size:clamp(24px,3.5vw,42px);line-height:1.15;margin:8px 0;color:#142238}
+.achievement-preview-copy p{font-size:15px;line-height:1.45;color:#334155;margin:0 0 12px}
+.achievement-preview-copy span{display:block;color:#861f35;font-size:12px;font-weight:650;line-height:1.35}
+.stable-results-controls .results-choice button{background:#fff;border-color:#ddd8d0;color:#26362e;border-radius:7px;min-height:44px}
+.stable-results-controls .results-choice button[aria-pressed=true]{background:#f8e9ed;border-color:#861f35;color:#791c32;box-shadow:inset 0 0 0 1px #861f35}
+.stable-results-controls .results-choice button[aria-pressed=true]:hover{background:#f3dce3;color:#791c32}
+.stable-results-controls .results-cta{border-color:#861f35;color:#861f35;background:#fff;border-radius:7px}
+.site:not(.enterprise) .exam-landing-hero{background:#f8f7f4;color:#142238;padding:clamp(22px,4vw,54px) 0;border-bottom:1px solid #e4e0da}
+.site:not(.enterprise) .exam-landing-grid{gap:clamp(18px,3vw,36px);align-items:center}
+.site:not(.enterprise) .exam-landing-grid .eyebrow{color:var(--exam-accent,#861f35)}
+.site:not(.enterprise) .exam-landing-grid h1{color:#142238;font-size:clamp(36px,5vw,64px);line-height:1.1;margin:10px 0 12px}
+.site:not(.enterprise) .exam-landing-grid p{color:#334155;font-size:clamp(15px,1.45vw,18px);line-height:1.6;max-width:58ch;opacity:1}
+.site:not(.enterprise) .exam-landing-grid .btn.outline{color:#183e74;border-color:#183e74;background:white}
+.site:not(.enterprise) .exam-landing-grid .actions{margin-top:18px;gap:10px}
+.exam-achievement-preview{display:grid;gap:8px;min-width:0;padding:8px;background:white;border:1px solid #e4e0da;border-radius:10px;color:#861f35;text-decoration:none;box-shadow:0 2px 10px #14223808}
+.exam-achievement-preview img{display:block;width:100%;height:auto;max-height:440px;object-fit:contain}
+.exam-achievement-preview span{font-size:12px;font-weight:650;text-align:center;padding:4px}
+.site:not(.enterprise) .exam-subject-art{color:#142238}
+.contact-rail button .ui-icon{display:none}
+@media screen and (max-width:740px){
+.site:not(.enterprise) .results-home{padding-top:12px;padding-bottom:20px}.site:not(.enterprise) .results-heading{padding-bottom:10px}.site:not(.enterprise) .results-heading h1{font-size:clamp(22px,5.9vw,28px);line-height:1.16;margin-top:7px}
+.site:not(.enterprise) .stable-results-controls{gap:8px}.site:not(.enterprise) .stable-results-stage{height:clamp(144px,42vw,190px);padding:5px;border-radius:8px}.site:not(.enterprise) .stable-results-stage[data-orientation=portrait]{grid-template-columns:minmax(0,1fr) minmax(0,43%);padding:6px 8px;gap:6px}
+.achievement-preview-copy{padding:4px 2px 4px 4px}.achievement-preview-copy small{font-size:9px;letter-spacing:.045em}.achievement-preview-copy h2{font-size:clamp(16px,4.6vw,20px);margin:5px 0}.achievement-preview-copy p{font-size:12px;line-height:1.35;margin-bottom:6px}.achievement-preview-copy span{font-size:10px}
+.stable-results-controls .results-choice{gap:5px}.stable-results-controls .results-choice button{min-height:44px;font-size:11px;padding:5px 6px}.stable-results-controls .results-current{grid-template-columns:44px minmax(0,1fr) 44px;gap:6px;position:relative}.stable-results-controls .results-paging{display:contents}.stable-results-controls .result-arrow.prev{grid-column:1;grid-row:1}.stable-results-controls .result-arrow.next{grid-column:3;grid-row:1}.stable-results-controls .results-cta{grid-column:2;grid-row:1;min-height:44px;font-size:11px;padding:5px 6px}.stable-results-controls .results-position{position:absolute;clip-path:inset(50%);width:1px;height:1px;min-height:0;overflow:hidden;white-space:nowrap}.results-caption{font-size:11px;padding-bottom:4px}
+.site:not(.enterprise) .exam-landing-grid .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.site:not(.enterprise) .exam-landing-grid .actions .btn{min-height:44px;justify-content:center;white-space:normal;text-align:center;padding:8px;font-size:12px;line-height:1.35}.exam-achievement-preview img{max-height:280px}.exam-achievement-preview{padding:6px}.site:not(.enterprise) .exam-landing-hero{padding:22px 0}
+.site:not(.enterprise) .contact-dock{padding:4px 6px calc(4px + env(safe-area-inset-bottom,0px));gap:3px}.site:not(.enterprise) .contact-dock .contact-rail,.site:not(.enterprise) .contact-dock .floating-assist{gap:3px}.site:not(.enterprise) .contact-dock .contact-rail button,.site:not(.enterprise) .contact-dock .floating-assist a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:48px;padding:4px 2px;background:white;color:#183e74;border:1px solid #e2e8f0;border-radius:7px;font-size:10px;line-height:1.1;box-shadow:none;writing-mode:horizontal-tb;transform:none}.site:not(.enterprise) .contact-dock .contact-rail button:nth-child(2){background:#861f35;color:white;border-color:#861f35}.site:not(.enterprise) .contact-dock .floating-assist .wa-launch{color:#18794e}.site:not(.enterprise) .contact-dock .ui-icon{display:block;width:18px;height:18px;flex:none}.site:not(.enterprise) footer{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+}
