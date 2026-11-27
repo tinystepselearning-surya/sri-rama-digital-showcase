@@ -21,3 +21,6 @@ Teacher and campus operational panels moved ahead of charts. Three authored lear
 
 ## Approved nine-workstream programme — active implementation
 Multi-stream and year cohort filter, 2,304 fictional learners across nine campus entries, six sample months, shared learner-derived tuition and parent fee statements. Six-month admissions history, current-state early conversion by cohort with explicit cutoff, Kanban preview and sample lead activity. Direct access preserved. Online course order aggregates remain independent of lead pipeline; no real transactions. Prioritise CI and browser verification before Firebase release. Detailed operational histories and full exam banks remain bounded demo scope.
+
+## Results-led institutional entry and role-specific routes
+Homepage now presents institution-supplied historical artwork, dedicated examination and results pages, and direct role-specific subroutes. Shared state retained across in-app navigation. No third-party results used. Avoid adding source posters containing examination IDs where alternatives exist. Build and browser verification required.
