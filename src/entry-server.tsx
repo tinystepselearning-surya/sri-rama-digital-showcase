@@ -22,3 +22,5 @@ export {learnerAssignments,assignmentDone,toggleAssignment} from './assignment-s
 
 export {taskDue,executiveActions,campusActionSummary,taskDefaults} from './operational-state';
 export {counsellorNames,counsellorOf,matchesCounsellor,sortFollowups} from './admissions-data';
+
+export {questionLevel,mockRows,questionReport} from './free-learning';
