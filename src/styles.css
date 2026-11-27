@@ -189,3 +189,6 @@
 
 /* P07-A — scoped management decision brief. */
 .decision-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}.decision-item{display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-width:0;padding:15px;border:1px solid #dbe2eb;border-radius:8px;background:#f8fafc}.decision-item>small{font-weight:700;color:#425269}.decision-item h3{margin:0!important;font-size:15px!important;line-height:1.4}.decision-item>strong{font-size:clamp(23px,3vw,32px);line-height:1.2;color:#142238;font-variant-numeric:tabular-nums}.decision-item p{margin:0!important}.decision-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}.decision-actions .btn{font-size:12px;min-height:44px;white-space:normal}.decision-brief .bi-footnote{margin-top:12px}@media(max-width:740px){.decision-grid{grid-template-columns:minmax(0,1fr)}.decision-item{padding:12px}.decision-actions{width:100%}.decision-actions .btn{flex:1 1 140px}}
+
+/* P07-B — actionable individual learning support. */
+.intervention-learning{display:grid;gap:6px;margin-top:8px;min-width:0}.intervention-learning small{display:block;line-height:1.45}.intervention-learning .btn{white-space:normal}.targeted-practice .free-panel{max-width:100%;box-shadow:none;border-radius:8px;margin-top:12px}.targeted-practice .free-panel h2{font-size:20px}

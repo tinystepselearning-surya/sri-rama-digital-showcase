@@ -11,7 +11,7 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 | 04 Enterprise workspace excellence | Engineering gate passed | Founder actionability; Centre Head scope; campus vs online CRM; family and learner-specific workflows; reliable empty states and filter behavior; role-specific visual hierarchy. |
 | 05 Online academy & educational quality | Engineering gate passed — independent educational review open | Verify every question/answer/explanation, chapter association, mock scoring and graph; original representative questions; clearly bounded samples; free policy and catalogue consistency. |
 | 06 Mobile, accessibility & performance | Engineering gate passed — manual visual, contrast and cross-browser review open | All 157 routes at 1440/390/360/768; keyboard interaction, focus and contrast review, browser resource/console checks; physical device and Safari review or explicit limitation; representative screenshots and page audit. |
-| 07 End-to-end business demonstrations | P07-A implemented — verification pending | Demonstrate prospect-to-CRM, campus academic record-to-parent, assignment-to-student, learner-specific mock/revision, action-to-founder, and fee reconciliation without live transactions; founder presentation runbook. |
+| 07 End-to-end business demonstrations | P07-A functional gate passed; P07-B implemented — verification pending | Demonstrate prospect-to-CRM, campus academic record-to-parent, assignment-to-student, learner-specific mock/revision, action-to-founder, and fee reconciliation without live transactions; founder presentation runbook. |
 | 08 Final release & Firebase verification | Pending | Artwork permissions/identifier review (owner confirmation where needed), reproducible dependencies, release manifest and exact candidate verification; explicit deployment approval; hosted validation and rollback instructions. |
 
 ## Working rules
@@ -55,3 +55,6 @@ Owner direction: defer advanced load optimisation until product development; ret
 
 
 P06-D exact candidate b8617dfa14ce9207b0a42545724fdbd94109b437 passed both runs 46014503321 and 46014494931, including inherited P06-C budgets and cold-load checks. Manual visual acceptance remains open. P07-A adds a scoped decision brief with derived academic, fee and admissions evidence, one campus priority per category, suggested owner and shared executive action recording with duplicate prevention. [P07 review](P07_DEMONSTRATION_REVIEW.md). Exact verification pending; no deployment.
+
+
+P07-A candidate c2a3c648d7d0aaf14c27d234d15b8b87405f75a2: both runs 46015377827 and 46015367293 passed build, static, browser, budget and cold-resource checks at review; page audits in progress. P07-B connects open individual academic intervention to learner-specific subject assignment, free practice, self-reported completion and parent evidence. No new routes or scoring rules. Exact candidate verification pending; no deployment.
