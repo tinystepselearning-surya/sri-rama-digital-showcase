@@ -7,6 +7,7 @@ const server=hosted?null:spawn(process.execPath,['node_modules/vite/bin/vite.js'
 const out='audit-output/'+(hosted?'hosted':'candidate'),results=[];await mkdir(out,{recursive:true});
 try{
  if(server){for(let i=0;i<60;i++){try{if((await fetch(base)).ok)break}catch{}await new Promise(r=>setTimeout(r,250))}}
+ if(hosted){try{const response=await fetch(base,{signal:AbortSignal.timeout(12000)});if(!response.ok)throw new Error('HTTP '+response.status)}catch(e){results.push({path:'/',error:'Hosted preflight failed: '+String(e)});throw e}}
  browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:900}});let errors=[];page.on('pageerror',e=>errors.push(e.message));
  const entries=Object.entries(routes);
  for(const width of [1440,390]){
@@ -15,7 +16,7 @@ try{
  errors=[];let row={id,path,width};
  try{
  const response=await page.goto(base+path,{waitUntil:'domcontentloaded',timeout:15000});await page.locator('h1').first().waitFor({timeout:5000});
- const metrics=await page.evaluate(async()=>{await document.fonts.ready;const headings=[...document.querySelectorAll('h1')];const broken=[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.getAttribute('src'));const brand=document.querySelector('.enterprise-brand img');const r=headings[0]?.getBoundingClientRect();return {heading:headings[0]?.innerText||'',headingCount:headings.length,headingTop:r?Math.round(r.top):null,overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),brokenImages:broken,logo:brand?.getAttribute('src')||null,noindex:document.querySelector('meta[name=robots]')?.getAttribute('content')||'',title:document.title}});
+ const metrics=await page.evaluate(async()=>{await document.fonts.ready;const headings=[...document.querySelectorAll('h1')];const broken=[...document.images].filter(i=>i.complete&&!i.naturalWidth&&i.getAttribute('src')).map(i=>i.getAttribute('src'));const brand=document.querySelector('.enterprise-brand img');const r=headings[0]?.getBoundingClientRect();return {heading:headings[0]?.innerText||'',headingCount:headings.length,headingTop:r?Math.round(r.top):null,overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),brokenImages:broken,logo:brand?.getAttribute('src')||null,noindex:document.querySelector('meta[name=robots]')?.getAttribute('content')||'',title:document.title}});
  row={...row,status:response?.status(),finalPath:new URL(page.url()).pathname,...metrics,errors:[...errors]};
  if(['/','/admissions/','/dashboard/founder/','/dashboard/founder/finance/','/dashboard/admissions/leads/','/dashboard/campus/','/dashboard/parent/','/online-academy/student/','/free-learning/'].includes(path))await page.screenshot({path:out+'/'+(id||'home')+'-'+width+'.png',animations:'disabled',timeout:10000});
  }catch(e){row={...row,error:String(e)}}
