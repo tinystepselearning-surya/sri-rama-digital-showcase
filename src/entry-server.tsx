@@ -38,3 +38,5 @@ export {demoStops} from './management-tour';
 
 export {admissionHistory} from './admissions-data';
 export {enrollmentPlan} from './commercial-state';
+
+export {academicLeadership,highScoreMinimum,lowScoreLimit} from './academic-leadership';
