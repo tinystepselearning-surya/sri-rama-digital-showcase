@@ -12,3 +12,5 @@ export {products,paidProducts} from './academy';
 export {questions,flashcards} from './free-learning';
 
 export {capacityRows,feePosition} from './campus-operations';
+
+export {buildSampleTasks} from './demo-operations';

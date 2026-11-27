@@ -7,7 +7,7 @@ export const seatCapacity=(campus:string)=>{const i=campuses.findIndex(c=>c.name
 export const capacityRows=(learners:Learner[])=>campuses.flatMap(c=>streams.flatMap(stream=>([1,2] as const).map(year=>{const enrolled=learners.filter(s=>s.campus===c.name&&s.stream===stream&&s.year===year).length,capacity=seatCapacity(c.name);return {campus:c.name,stream,year,enrolled,capacity,available:Math.max(0,capacity-enrolled),over:Math.max(0,enrolled-capacity)}})));
 export const feePosition=(s:Learner,week:number)=>{const f=annualFee(s),paid=sum(f.receipts.slice(0,week+1)),due=sum(f.schedule.slice(0,week+1));return {annual:f.billed,paid,overdue:Math.max(0,due-paid),future:f.billed-due}};
 const fmt=(n:number)=>n.toFixed(1)+'%';
-const Kpis=({items}:{items:[string,string|number,string][]})=><div className="bi-kpis">{items.map(([l,v,d])=><div className="bi-kpi" key={l}><small>{l}</small><strong>{v}</strong><span>{d}</span></div>)}</div>;
+const Kpis=({items}:{items:[string,string|number,string][]})=><div className="bi-kpis">{items.map(([l,v,d])=><div className="bi-kpi" key={l}><small>{l}</small><strong>{typeof v==='number'?v.toLocaleString('en-IN'):v}</strong><span>{d}</span></div>)}</div>;
 export function CampusOperations({page,section,campus,learners,tasks,setTasks,week,hrefFor}:OpsProps){
  const [query,setQuery]=useState(''),[stream,setStream]=useState('All streams'),[year,setYear]=useState('All years'),[filter,setFilter]=useState('All'),[offset,setOffset]=useState(0);
  const roster=learners.filter(s=>campus==='All campuses'||s.campus===campus),capacity=capacityRows(learners).filter(r=>campus==='All campuses'||r.campus===campus);

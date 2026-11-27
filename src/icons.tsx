@@ -1,5 +1,5 @@
 import React from 'react';
-export const iconNames=['pathways','study-plan','campus','wellbeing','chevron-down','chevron-left','chevron-right','menu','close','grid','message','assistant'] as const;
+export const iconNames=['pathways','study-plan','campus','wellbeing','chevron-down','chevron-left','chevron-right','menu','close','grid','message','assistant','online-learning'] as const;
 export type IconName=typeof iconNames[number];
 export const journalIcons:Record<string,IconName>={'choose-stream':'pathways','exam-preparation':'study-plan','campus-checklist':'campus','supporting-teenagers':'wellbeing'};
 export function Icon({name,className=''}:{name:IconName;className?:string}){
@@ -15,6 +15,7 @@ export function Icon({name,className=''}:{name:IconName;className?:string}){
  close:<path d="m6 6 12 12M18 6 6 18"/>,
  grid:<><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></>,
  message:<><path d="M20 11.5a8 8 0 0 1-8 8c-1.3 0-2.5-.3-3.6-.8L4 20l1.2-4.3A8 8 0 1 1 20 11.5Z"/><path d="M9 8c.5 3 2 4.7 5 6l1.5-1.5"/></>,
+ 'online-learning':<><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M2 21h20M9 17v4M15 17v4M10 7l5 3-5 3Z"/></>,
  assistant:<><rect x="4" y="7" width="16" height="12" rx="4"/><path d="M12 3v4M8 15h8"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="11" r="1" fill="currentColor" stroke="none"/></>
  };
  return <svg data-icon={name} className={'ui-icon '+className} viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round">{shapes[name]}</svg>
