@@ -1,0 +1,10 @@
+import {campuses} from './institution';
+export const months=['May','Jun','Jul','Aug','Sep','Oct'];
+export const streams=['MPC','BiPC','MEC','CEC'] as const;
+export type Stream=typeof streams[number];
+export const subjects:Record<Stream,string[]>={MPC:['Mathematics','Physics','Chemistry'],BiPC:['Biology','Physics','Chemistry'],MEC:['Mathematics','Economics','Commerce'],CEC:['Civics','Economics','Commerce']};
+export type Learner={id:string;campus:string;stream:Stream;year:1|2;batch:string;present:number[];marks:number[][];feedback?:string};
+export const initialLearners:Learner[]=campuses.flatMap((c,i)=>streams.flatMap((stream,k)=>([1,2] as const).flatMap(year=>Array.from({length:24+i*2},(_,j)=>{const seed=i*101+k*37+year*19+j*11;const trend=(j%7===0?-2:2)+(k===1?1:0);return {id:'DEMO-'+String(i+1).padStart(2,'0')+'-'+stream+'-'+year+'-'+String(j+1).padStart(2,'0'),campus:c.name,stream,year,batch:j%2===0?'A':'B',present:months.map((_,m)=>Math.max(12,Math.min(30,27-((seed+m*3)%7)+(i===5?3:i===4?-4:0)+(m>=4&&i===6?-3:0)))),marks:months.map((_,m)=>[0,1,2].map(s=>Math.max(0,Math.min(100,42+(seed+s*13)%46+trend*m+(i===5?8:i===4?-8:0)+(s===1?-5:s===2?4:0)))))};}))));
+export const tuition=(s:Learner,m:number)=>{const i=campuses.findIndex(c=>c.name===s.campus),billed=3500+(i%3)*250+(s.year-1)*250;const factor=.64+(i%4)*.07+m*.025+(s.id.charCodeAt(s.id.length-1)%4)*.035;return {billed,paid:Math.min(billed,Math.round(billed*factor))}};
+export const sum=(xs:number[])=>xs.reduce((a,b)=>a+b,0);
+export const ratio=(a:number,b:number)=>b?100*a/b:0;
