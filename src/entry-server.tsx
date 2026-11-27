@@ -27,3 +27,5 @@ export {questionLevel,mockRows,questionReport} from './free-learning';
 
 export {paperBank,selectPaper} from './learning';
 export {revisionItems} from './revision-state';
+
+export {executivePriorities,priorityOpen,addPriorityAction} from './executive-priorities';
