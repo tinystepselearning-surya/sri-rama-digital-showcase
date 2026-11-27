@@ -79,3 +79,6 @@ Reviewed rendered SVG source across public, enterprise and learning modules. Rep
 
 ## Presentation quality closure
 Replace remaining arbitrary homepage shortcut numbers, stream numbering and empty department portrait blocks with relevant shared visual cues. Remove hard-coded 6/10 learning progress not supported by the actual learner modules. Refine public copy using established institutional themes. Introduce a deterministic starting action register (fictional campus management, incidents, academic interventions, fee follow-ups, family requests, assignments and executive actions), with valid learner references and qualifying academic/fee criteria. Preserve clean first-learner test journeys; no real PII, financial mutations or production state. Show owner and due date in action queues, Indian numeric grouping and clear sample reporting dates. Added regression checks for starting action data; no new routes, services or pricing changes.
+
+## Phased quality programme
+See [SHOWCASE_QUALITY_PROGRAMME.md](SHOWCASE_QUALITY_PROGRAMME.md) for the nine-phase quality closure plan, gates, and verified baseline evidence. Scope frozen at 157 routes unless a specific approved need emerges.
