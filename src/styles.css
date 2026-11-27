@@ -201,3 +201,30 @@
 
 /* P08 mobile platform navigation: non-empty route hub, reachable touch controls. */
 @media(max-width:740px){.enterprise .workspace-menu-toggle{min-height:46px;flex-shrink:0;touch-action:manipulation}.enterprise .workspace-menu-toggle span{min-width:0;overflow-wrap:anywhere}.enterprise .workspace-menu-toggle .ui-icon{flex-shrink:0}.enterprise .enterprise-rail nav.workspace-nav-open{max-height:52vh;max-height:52dvh;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}.enterprise .enterprise-rail nav a{touch-action:manipulation}.enterprise[data-page="platform"] .enterprise-rail .rail-switch{display:none}}
+
+/* P08 mobile analytics: labelled vertical records, intact desktop tables and native controls. */
+.responsive-analytics-table .analytics-field-label{display:none}.responsive-analytics-table .analytics-field-value{display:contents}
+@media screen and (max-width:1000px){
+.enterprise .bi-table:has(.responsive-analytics-table){max-height:none;overflow:visible;border:0;border-radius:0;background:transparent;overscroll-behavior-inline:auto}
+.enterprise .bi-table table.responsive-analytics-table{display:block;position:relative;min-width:0;width:100%;max-width:100%;margin:0;border:0}
+.enterprise .responsive-analytics-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;padding:0;margin:0;border:0}
+.enterprise .responsive-analytics-table tbody{display:grid;grid-template-columns:minmax(0,1fr);gap:9px;min-width:0;width:100%}
+.enterprise .responsive-analytics-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr);gap:0;width:100%;min-width:0;max-width:100%;border:1px solid #dce4ec;border-radius:8px;background:#fff;box-sizing:border-box}
+.enterprise .responsive-analytics-table tbody tr:nth-child(even){background:#fafbfd}
+.enterprise .responsive-analytics-table tbody td{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);align-items:center;gap:10px;min-width:0;max-width:100%;width:100%;box-sizing:border-box;padding:7px 10px;text-align:left;border-bottom:1px solid #e4eaf1;white-space:normal;font-size:13px;line-height:1.4;overflow-wrap:anywhere}
+.enterprise .responsive-analytics-table tbody td:first-child{background:#edf1f6;color:#142238;font-weight:700;border-radius:7px 7px 0 0;padding-block:9px}
+.enterprise .responsive-analytics-table tbody td:last-child{border-bottom:0;border-radius:0 0 7px 7px}
+.enterprise .responsive-analytics-table tbody tr:last-child td:not(:last-child){border-bottom:1px solid #e4eaf1}
+.enterprise .responsive-analytics-table .analytics-field-label{display:block;color:#425269;font-size:11px;font-weight:650;line-height:1.4;min-width:0;overflow-wrap:anywhere}
+.enterprise .responsive-analytics-table .analytics-field-value{display:block;min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal;font-variant-numeric:tabular-nums}
+.enterprise .responsive-analytics-table .numeric-cell{text-align:left;white-space:normal}
+.enterprise .responsive-analytics-table .analytics-field-value :is(button,input,select,a.btn){max-width:100%;box-sizing:border-box;white-space:normal;overflow-wrap:anywhere}
+.enterprise .responsive-analytics-table .analytics-field-value select{width:100%;min-width:0;font-size:16px}
+.enterprise .responsive-analytics-table .analytics-field-value input[type=number]{width:100%;max-width:110px}
+.enterprise .responsive-analytics-table .analytics-field-value .btn{min-height:44px;padding:7px 9px}
+.enterprise .responsive-analytics-table .analytics-field-value .text-button{min-height:44px;padding:5px 0}
+.enterprise .responsive-analytics-table .lead-intent{max-width:100%}
+.enterprise .kanban-board{grid-template-columns:minmax(0,1fr);overflow:visible;scroll-snap-type:none;min-width:0;max-width:100%}
+.enterprise .kanban-board section{scroll-snap-align:none;min-width:0;overflow-wrap:anywhere}
+.enterprise .kanban-lead{min-height:44px;min-width:0;overflow-wrap:anywhere}
+}
