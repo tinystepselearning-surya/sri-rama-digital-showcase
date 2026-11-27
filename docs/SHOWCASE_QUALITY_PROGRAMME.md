@@ -11,7 +11,7 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 | 04 Enterprise workspace excellence | Engineering gate passed | Founder actionability; Centre Head scope; campus vs online CRM; family and learner-specific workflows; reliable empty states and filter behavior; role-specific visual hierarchy. |
 | 05 Online academy & educational quality | Engineering gate passed — independent educational review open | Verify every question/answer/explanation, chapter association, mock scoring and graph; original representative questions; clearly bounded samples; free policy and catalogue consistency. |
 | 06 Mobile, accessibility & performance | Engineering gate passed — manual visual, contrast and cross-browser review open | All 157 routes at 1440/390/360/768; keyboard interaction, focus and contrast review, browser resource/console checks; physical device and Safari review or explicit limitation; representative screenshots and page audit. |
-| 07 End-to-end business demonstrations | P07-A functional gate passed; P07-B first browser gate passed; P07-C implemented — verification pending | Demonstrate prospect-to-CRM, campus academic record-to-parent, assignment-to-student, learner-specific mock/revision, action-to-founder, and fee reconciliation without live transactions; founder presentation runbook. |
+| 07 End-to-end business demonstrations | P07-A/B passed; P07-C first browser gate passed; P07-D implemented — verification pending | Demonstrate prospect-to-CRM, campus academic record-to-parent, assignment-to-student, learner-specific mock/revision, action-to-founder, and fee reconciliation without live transactions; founder presentation runbook. |
 | 08 Final release & Firebase verification | Pending | Artwork permissions/identifier review (owner confirmation where needed), reproducible dependencies, release manifest and exact candidate verification; explicit deployment approval; hosted validation and rollback instructions. |
 
 ## Working rules
@@ -61,3 +61,6 @@ P07-A candidate c2a3c648d7d0aaf14c27d234d15b8b87405f75a2: both runs 46015377827 
 
 
 P07-C: catalogue-priced hypothetical paid course sales planning (1,000 annual starting scenario; adjustable count and annual/crash mix), online CRM handoff and due/unassigned workload with guarded individual sample follow-up. No historical receipt, enrolment or stage mutation from scenario. P07-B first browser run passed, second and full page audits pending at inspection. Exact P07-C verification pending. No deployment.
+
+
+P07-A exact candidate c2a3c648d7d0aaf14c27d234d15b8b87405f75a2 runs 46015377827/46015367293 and P07-B exact candidate 5cabfb31dc4535513a6006bf274995db7a3764c0 runs 46015773266/46015762926 completed successfully. P07-C first browser gate passed at review. P07-D adds an opt-in ten-stop guided presentation within existing opportunities page, with session-only presenter review marks, resume and exit; no new route or business record mutation. Exact verification pending. No deployment.

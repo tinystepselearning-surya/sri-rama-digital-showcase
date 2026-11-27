@@ -33,3 +33,5 @@ export {executivePriorities,priorityOpen,addPriorityAction} from './executive-pr
 export {interventionSubject,interventionAssignment,addInterventionAssignment} from './assignment-state';
 
 export {coachingScenario,admissionsWorkload,recordDueFollowup} from './commercial-state';
+
+export {demoStops} from './management-tour';
