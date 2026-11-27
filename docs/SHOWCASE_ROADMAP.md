@@ -18,3 +18,6 @@ Six monthly academic samples May–October for 576 fictional MPC learners (30 sc
 
 ## Enterprise iteration C — implemented, verification pending
 Teacher and campus operational panels moved ahead of charts. Three authored learning previews with session-only completion, rule-based nine-question paper lab with answer key and print, static route/shell/media/build checks and build-only GitHub Actions workflow. No real AI, no deployment. Full learning course material and production exams remain outside the demo.
+
+## Approved nine-workstream programme — active implementation
+Multi-stream and year cohort filter, 2,304 fictional learners across nine campus entries, six sample months, shared learner-derived tuition and parent fee statements. Six-month admissions history, current-state early conversion by cohort with explicit cutoff, Kanban preview and sample lead activity. Direct access preserved. Online course order aggregates remain independent of lead pipeline; no real transactions. Prioritise CI and browser verification before Firebase release. Detailed operational histories and full exam banks remain bounded demo scope.
