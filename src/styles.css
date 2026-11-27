@@ -192,3 +192,6 @@
 
 /* P07-B — actionable individual learning support. */
 .intervention-learning{display:grid;gap:6px;margin-top:8px;min-width:0}.intervention-learning small{display:block;line-height:1.45}.intervention-learning .btn{white-space:normal}.targeted-practice .free-panel{max-width:100%;box-shadow:none;border-radius:8px;margin-top:12px}.targeted-practice .free-panel h2{font-size:20px}
+
+/* P07-C — commercial scenario and actionable follow-up queue. */
+.scenario-mix{display:flex;height:10px;border-radius:5px;overflow:hidden;background:#e2e8f0;margin:14px 0}.scenario-mix>div:first-child{background:#183e74}.scenario-mix>div:last-child{background:#861f35}.commercial-scenario .bi-kpi{min-width:0}.commercial-scenario .bi-kpi span{overflow-wrap:anywhere}.followup-quick{display:block;margin-top:6px;white-space:normal}
