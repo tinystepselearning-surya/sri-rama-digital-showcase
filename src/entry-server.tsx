@@ -7,3 +7,6 @@ export const render=(page:string)=>renderToString(<App initialPage={page}/>);
 export {initialLearners,tuition,subjects} from './model';
 export {initialLeads} from './dashboard';
 export {ledgerFor} from './finance';
+
+export {products,paidProducts} from './academy';
+export {questions,flashcards} from './free-learning';

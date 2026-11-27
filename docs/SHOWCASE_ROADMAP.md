@@ -24,3 +24,6 @@ Multi-stream and year cohort filter, 2,304 fictional learners across nine campus
 
 ## Results-led institutional entry and role-specific routes
 Homepage now presents institution-supplied historical artwork, dedicated examination and results pages, and direct role-specific subroutes. Shared state retained across in-app navigation. No third-party results used. Avoid adding source posters containing examination IDs where alternatives exist. Build and browser verification required.
+
+## Free learning policy — supersedes earlier ₹999 test series proposal
+All mock tests, practice, flashcards, reports and explanations are free without registration. Eight paid coaching products remain; four old test-series routes are zero-fee resource entries. Exclude free resources entirely from finance ledger. Free learning centre, five mini-mock tracks, 18 authored questions, 12 revision cards, student subpages and founder session engagement. All resources are illustrative, not full-length or official exams. Responsive containment changes address prior mobile CI failure; verify on candidate. No personal information or production changes.
