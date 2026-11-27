@@ -10,7 +10,8 @@ try{
  if(hosted){try{const response=await fetch(base,{signal:AbortSignal.timeout(12000)});if(!response.ok)throw new Error('HTTP '+response.status)}catch(e){results.push({path:'/',error:'Hosted preflight failed: '+String(e)});throw e}}
  browser=await chromium.launch({headless:true});const page=await browser.newPage({viewport:{width:1440,height:900}});let errors=[];page.on('pageerror',e=>errors.push(e.message));
  const entries=Object.entries(routes);
- for(const width of [1440,390]){
+ // Keep the hosted baseline comparable; expand the release candidate to narrow phone and tablet widths.
+ for(const width of hosted?[1440,390]:[1440,390,360,768]){
  await page.setViewportSize({width,height:900});
  for(const [id,[path]] of entries){
  errors=[];let row={id,path,width};

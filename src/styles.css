@@ -132,3 +132,9 @@
 .enterprise .action-scope{display:block;font-size:11px;color:#526277;margin-top:4px}.enterprise .bi-table .due-label{display:block;font-size:11px;margin-top:3px}.enterprise .compact-leads th{white-space:nowrap}
 
 .revision-retry{padding:12px 0}.revision-retry .free-options{display:grid;gap:8px}.revision-retry .free-options button{white-space:normal;min-height:44px}.paper-output ol{padding-left:28px;line-height:1.7}.paper-output h3{overflow-wrap:anywhere}
+
+/* P06-A — touch-friendly learning forms and tablet navigation. */
+@media(max-width:1100px){.institution-menu-toggle,.institution-nav-trigger,.institution-dropdown a{min-height:44px}.institution-dropdown a{display:flex;align-items:center}}
+@media(min-width:741px) and (max-width:1000px){.enterprise .enterprise-rail nav a{min-height:44px}.enterprise .bi-filters select,.enterprise .bi-filters input:not([type=checkbox]),.enterprise .bi-panel select{min-height:44px;font-size:16px}.enterprise .bi-panel .btn,.enterprise .business-tabs button{min-height:44px}}
+@media(max-width:1000px){.site[data-page="paper-lab"] .bi-filters,.free-panel .bi-filters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.site[data-page="paper-lab"] .bi-filters label,.free-panel .bi-filters label{width:100%;min-width:0}.site[data-page="paper-lab"] .bi-filters select,.free-panel .bi-filters select{width:100%;min-width:0;max-width:100%;min-height:44px;font-size:16px;border-radius:6px}.site[data-page="paper-lab"] .panel>.btn,.site[data-page="paper-lab"] .paper-output .btn,.free-panel .btn,.free-options button{min-height:44px;white-space:normal;overflow-wrap:anywhere}.site[data-page="paper-lab"] .paper-output .actions{flex-wrap:wrap}}
+@media(max-width:480px){.site[data-page="paper-lab"] .bi-filters,.free-panel .bi-filters{grid-template-columns:minmax(0,1fr)}.site[data-page="paper-lab"] .panel>.btn,.site[data-page="paper-lab"] .paper-output .actions .btn{width:100%}}

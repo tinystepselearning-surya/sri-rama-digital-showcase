@@ -11,3 +11,6 @@ Candidate 30083aa388b965bc71e76422c2f4969e5efe76dc failed browser verification a
 
 ### P05-B browser selector repair
 Both runs 46011349969 and 46011359765 reached the mistake notebook after the five accessible paper-filter checks, Commerce format/availability, generation and answer-key checks. Both failed strict locator matching because the same question appears in the review entry and nested retry content. The browser test now targets the review's own bold question text, requires a single matching entry, verifies its continued presence after related practice and its removal after the correct original retry. No assertions bypassed or application code changed. Exact new candidate verification pending; no deployment.
+
+
+P05-B engineering closure: exact candidate 2c929b5c47b41d76a3a20a79f80ba0df63becaef passed runs 46011716925 and 46011709641, including paper generation, related practice feedback, original mistake resolution, and 314 candidate/314 hosted page checks. Independent educational review and formal syllabus mapping remain open; hosted audit does not establish deployed commit identity. No deployment.
