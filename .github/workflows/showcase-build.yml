@@ -20,3 +20,16 @@ jobs:
       - run: npm install --no-save --package-lock=false playwright
       - run: npx playwright install --with-deps chromium
       - run: node scripts/verify-browser.mjs
+      - name: Candidate page-by-page layout audit
+        if: ${{ always() }}
+        run: node scripts/audit-pages.mjs
+      - name: Hosted page-by-page read-only audit
+        if: ${{ always() }}
+        continue-on-error: true
+        run: node scripts/audit-pages.mjs --hosted
+      - name: Upload route audit and representative screenshots
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: showcase-page-audit
+          path: audit-output/

@@ -3,3 +3,11 @@ const basePaths:Record<string,string>={'dashboard-founder':'/dashboard/founder/'
 export const sectionId=(role:string,section:string)=>section==='overview'?role:role+'--'+section;
 export const workspaceRoutes:Record<string,readonly string[]>=Object.fromEntries(Object.entries(workspaceSections).flatMap(([role,items])=>items.filter(([id])=>id!=='overview').map(([id,label])=>[sectionId(role,id),[basePaths[role]+id+'/',label+' | '+role.replace('dashboard-','')+' | Sri Raama Digital','Direct-access fictional demonstration workspace.']])));
 export const splitWorkspace=(page:string)=>{const [role,section='overview']=page.split('--');return role==='dashboard-teacher'?{role:'dashboard-campus',section:section==='performance'?'academics':section}:{role,section}};
+
+const groupDefinitions:Record<string,[string,string[]][]>={
+'dashboard-founder':[['Academic performance',['academics','attendance','campuses']],['Business performance',['capacity','admissions','finance','growth']],['Management',['planning']]],
+'dashboard-admissions':[['Enquiry operations',['pipeline','leads','followups']],['Performance',['analytics','productivity']]],
+'dashboard-campus':[['Student management',['enrolment','attendance','interventions']],['Academic management',['academics','register','coordination','planning','tools']],['Business operations',['admissions','finance','recovery']],['Campus administration',['operations','family']]],
+'dashboard-parent':[['My child',['academics','fees']],['Communication',['support','family']]],
+'student':[['Learning',['lessons','practice','questions','flashcards']],['My study plan',['planner','revision','history','progress','resources']]]};
+export function workspaceGroups(page:string){const items=workspaceSections[page]||[];const defs=groupDefinitions[page]||[];const groups=[{title:'',items:items.filter(([id])=>id==='overview')},...defs.map(([title,ids])=>({title,items:items.filter(([id])=>ids.includes(id))}))];const included=new Set(groups.flatMap(g=>g.items.map(([id])=>id)));const remaining=items.filter(([id])=>!included.has(id));if(remaining.length)groups.push({title:'Other',items:remaining});return groups.filter(g=>g.items.length)}
