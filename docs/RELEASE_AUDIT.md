@@ -15,3 +15,5 @@ Scope: independent demonstration, no login, backend, payments or personal data c
 | Opportunity | Free learning acquisition, campus enquiry conversion, online annual/crash growth, learner support, fee recovery, parent retention; future distribution via partnerships and institution-approved content. Production data collection, analytics, identity, safeguarding, security and consent require separate approval. |
 ## Release acceptance
 Verify every route and media file, mobile layouts, keyboard/focus and contrast, cross-role state, free flows, paid-only ledger and scenario labels; review actual imagery and approved claims. Deploy solely to sri-rama-digital-demo after approval. Noindex is not access control.
+## Verification follow-up
+First free-learning candidate passed build/static checks and completed all 15 mobile width checks, but had four recoverable React hydration errors. Consolidated multi-part select option labels into single strings as a targeted hydration correction; added pathname and component-stack diagnostics without suppressing errors. Must verify latest run before release; exact cause remains unconfirmed.
