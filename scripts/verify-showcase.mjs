@@ -94,3 +94,6 @@ const p07c=await import('../.prerender/entry-server.js');const target=p07c.coach
 
 // P07-D tour links must refer to registered routes; all ten stops unique.
 const p07d=await import('../.prerender/entry-server.js');assert.equal(p07d.demoStops.length,10);assert.equal(new Set(p07d.demoStops.map(s=>s.id)).size,10);for(const stop of p07d.demoStops){assert.ok(routes[stop.id],stop.id);assert.ok(stop.try.trim()&&stop.why.trim());}const tourHtml=await readFile('dist/digital-opportunities/index.html','utf8');assert.match(tourHtml,/Guided management demonstration/);assert.match(tourHtml,/Start guided demonstration/);assert.doesNotMatch(founder,/Guided demonstration controls/);console.log('P07-D verified guided tour route references and opt-in initial state.');
+
+// P08 mobile hub menu must include real destination links, not an empty nav.
+const hubHtml=await readFile('dist/digital-platform/index.html','utf8');const hubNav=hubHtml.match(/<nav[^>]*id="workspace-navigation"[^>]*>[\s\S]*?<\/nav>/)?.[0];assert.ok(hubNav);for(const id of ['dashboard-founder','dashboard-admissions','dashboard-campus','dashboard-parent','student','opportunities','home'])assert.ok(hubNav.includes('href="'+routes[id][0]+'"'),'Missing hub menu destination '+id);assert.match(hubHtml,/Explore workspaces · Menu/);console.log('P08 verified seven actual platform navigation destinations.');

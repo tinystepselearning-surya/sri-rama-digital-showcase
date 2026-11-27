@@ -64,3 +64,6 @@ P07-C: catalogue-priced hypothetical paid course sales planning (1,000 annual st
 
 
 P07-A exact candidate c2a3c648d7d0aaf14c27d234d15b8b87405f75a2 runs 46015377827/46015367293 and P07-B exact candidate 5cabfb31dc4535513a6006bf274995db7a3764c0 runs 46015773266/46015762926 completed successfully. P07-C first browser gate passed at review. P07-D adds an opt-in ten-stop guided presentation within existing opportunities page, with session-only presenter review marks, resume and exit; no new route or business record mutation. Exact verification pending. No deployment.
+
+
+P08 mobile hotfix: owner reported inaccessible menu on /digital-platform/. Source inspection found workspaceGroups('platform') returned no groups, leaving the mobile disclosure empty. Provide direct links to all five existing role workspaces, guided demonstration and institutional homepage; retain the existing role-specific menu logic and improve touch scrolling. Static and touch browser regression added (360/390/430px); candidate verification pending. No deployment in this increment.
