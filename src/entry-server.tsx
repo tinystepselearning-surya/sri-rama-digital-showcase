@@ -35,3 +35,6 @@ export {interventionSubject,interventionAssignment,addInterventionAssignment} fr
 export {coachingScenario,admissionsWorkload,recordDueFollowup} from './commercial-state';
 
 export {demoStops} from './management-tour';
+
+export {admissionHistory} from './admissions-data';
+export {enrollmentPlan} from './commercial-state';

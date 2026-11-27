@@ -17,3 +17,8 @@ export function recordDueFollowup(leads:Lead[],id:number):Lead[]{
  if(!leads.some(l=>l.id===id&&isDueLead(l)))return leads;
  return leads.map(l=>l.id===id?{...l,followedUp:true,activity:[...(l.activity||[]),sampleSnapshot+' · Sample follow-up completed']}:l);
 }
+
+export const annualEnrollmentTargets=[250,500,1000,1500];
+export const crashEnrollmentTargets=[0,250,500,1000,1500,2000];
+export const crashPlanningFees=[2500,3500];
+export function enrollmentPlan(annual:number,crash:number,crashFee:number){if(!annualEnrollmentTargets.includes(annual)||!crashEnrollmentTargets.includes(crash)||!crashPlanningFees.includes(crashFee))throw new Error('Unsupported enrolment assumption');const annualFee=coachingScenario(1000,100).annualFee;return {annual,crash,annualFee,crashFee,total:annual+crash,annualGross:annual*annualFee,crashGross:crash*crashFee,gross:annual*annualFee+crash*crashFee};}

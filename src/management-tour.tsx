@@ -9,7 +9,7 @@ export const demoStops=[
  {id:'dashboard-parent--family',title:'Parent visibility',why:'Demonstrate how individual assignments and learning activity are shared with the selected fictional learner’s parent.',try:'Check the learner ID, assignment completion and session evidence. Do not infer mastery from activity.'},
  {id:'paper-lab',title:'Assessment design',why:'Demonstrate rule-based generation of sample assessment papers.',try:'Select a subject and question format, generate a sample paper and reveal its answer key. No live AI.'},
  {id:'dashboard-founder--finance',title:'Financial oversight',why:'Distinguish annual fee commitments, receipts, overdue and future instalments.',try:'Select a campus and reporting month, reconcile amounts and review the campus fee position.'},
- {id:'dashboard-founder--growth',title:'Digital growth opportunity',why:'Show free learning engagement, historical sample orders and hypothetical commercial scenarios separately.',try:'Adjust planned sales and annual/crash mix. Explain that gross course value is not a forecast or profit.'}
+ {id:'dashboard-founder--growth',title:'Digital growth opportunity',why:'Show paid annual and crash enrolments, confirmed collections and separate planning targets.',try:'Adjust annual and crash enrolment targets and crash planning fee. Explain that gross course value is not a forecast or profit.'}
 ] as const;
 export type TourState={index:number;reviewed:string[]};
 type Props={state:TourState|null;hrefFor:(id:string)=>string;selectStop:(index:number)=>void;mark:()=>void;end:()=>void};
