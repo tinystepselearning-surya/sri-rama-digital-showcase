@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 import {campuses} from './institution';
 import {paidProducts} from './academy';
-import {initialLeads,isDigital} from './admissions-data';
+import {confirmedOnlineOrders} from './admissions-data';
 import {annualFee,feeMonths,money,type Learner} from './model';
 export type Ledger={id:string;campus:string;channel:'Campus'|'Online';product:string;billed:number;schedule:number[];receipts:number[]};
-export const ledgerFor=(learners:Learner[]):Ledger[]=>[...learners.map(s=>{const f=annualFee(s);return {id:s.id,campus:s.campus,channel:'Campus' as const,product:'Annual campus tuition',billed:f.billed,schedule:f.schedule,receipts:f.receipts}}),...initialLeads.filter(l=>isDigital(l)&&l.status==='Converted').flatMap(l=>{const p=paidProducts.find(p=>p.title===l.product),m=Number(l.convertedAt?.slice(5,7))-5;if(!p||m<0||m>5)return [];const schedule=feeMonths.map((_,i)=>i===m?p.fee:0);return [{id:'ORDER-'+l.id,campus:'Digital academy',channel:'Online' as const,product:p.title,billed:p.fee,schedule,receipts:[...schedule]}]})];
+export const ledgerFor=(learners:Learner[]):Ledger[]=>[...learners.map(s=>{const f=annualFee(s);return {id:s.id,campus:s.campus,channel:'Campus' as const,product:'Annual campus tuition',billed:f.billed,schedule:f.schedule,receipts:f.receipts}}),...confirmedOnlineOrders().map(order=>{const schedule=feeMonths.map((_,i)=>i===order.month?order.fee:0);return {id:order.id,campus:'Digital academy',channel:'Online' as const,product:order.product,billed:order.fee,schedule,receipts:[...schedule]}})];
 const total=(xs:number[])=>xs.reduce((a,b)=>a+b,0);
 export const feeSummary=(rows:Ledger[],cutoff=5)=>{const billed=total(rows.map(r=>r.billed)),paid=total(rows.map(r=>total(r.receipts.slice(0,cutoff+1)))),due=total(rows.map(r=>total(r.schedule.slice(0,cutoff+1))));return {billed,paid,due,outstanding:billed-paid,overdue:Math.max(0,due-paid),future:billed-due}};
 export function Finance({campus='All campuses',learners,cutoff=5}:{campus?:string;learners:Learner[];cutoff?:number}){

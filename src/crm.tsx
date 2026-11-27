@@ -1,7 +1,6 @@
 import React,{useState} from 'react';
 import type {Lead} from './dashboard';
-
-const snapshot='2026-11-27';
+import {sampleSnapshot as snapshot} from './admissions-data';
 export const lossReasons=['Programme not suitable','Fee or affordability concern','Campus or travel preference','Chose another institution','Not proceeding at present'];
 export function changeStage(l:Lead,status:string):Lead{return {...l,status,lossReason:status==='Closed'?l.lossReason:undefined,convertedAt:l.convertedAt||(status==='Converted'?snapshot:undefined),activity:[...(l.activity||[]),snapshot+' · '+l.status+' → '+status]}}
 export function LeadHistory({leads}:{leads:Lead[]}){

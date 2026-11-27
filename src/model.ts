@@ -16,3 +16,12 @@ export const annualFee=(s:Learner)=>{const i=campuses.findIndex(c=>c.name===s.ca
 export const money=(v:number)=>{const abs=Math.abs(v),sign=v<0?'−':'';return sign+'₹'+(abs>=10000000?(abs/10000000).toFixed(2)+' Cr':abs>=100000?(abs/100000).toFixed(2)+' L':Math.round(abs).toLocaleString('en-IN'))};
 export const sum=(xs:number[])=>xs.reduce((a,b)=>a+b,0);
 export const ratio=(a:number,b:number)=>b?100*a/b:0;
+
+// All reports use the same fixed sample assessment/session denominators.
+export const scheduledSessions=30;
+export const assessmentMaximum=300;
+export const reviewAttendanceMinimum=24;
+export const reviewSubjectMinimum=60;
+export const learnerScore=(s:Learner,month:number)=>sum(s.marks[month]);
+export const attendanceRate=(rows:Learner[],month:number)=>ratio(sum(rows.map(s=>s.present[month])),rows.length*scheduledSessions);
+export const assessmentRate=(rows:Learner[],month:number)=>ratio(sum(rows.map(s=>learnerScore(s,month))),rows.length*assessmentMaximum);

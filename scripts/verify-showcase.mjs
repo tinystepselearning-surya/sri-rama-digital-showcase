@@ -30,3 +30,27 @@ const newStudyPaths=['/free-learning/study-materials/','/free-learning/study-mat
 for(const [p,count] of [['/',3],['/parent-guides/',4]]){const html=await readFile('dist'+p+'index.html','utf8');const journal=[...html.matchAll(/<div class="journal-art[^"]*">[\s\S]*?<\/div>/g)].map(m=>m[0]);assert.equal(journal.length,count);const names=journal.map(x=>x.match(/data-icon="([^"]+)"/)?.[1]);assert.deepEqual(names,['pathways','study-plan','campus','wellbeing'].slice(0,count));assert.ok(journal.every(x=>x.includes('aria-hidden="true"')&&!x.includes('M5 63L34')))}console.log('Verified article-specific semantic artwork on homepage and parent journal.');
 
 const {buildSampleTasks}=await import('../.prerender/entry-server.js');const startingTasks=buildSampleTasks(),learnerById=new Map(initialLearners.map(s=>[s.id,s]));assert.equal(new Set(startingTasks.map(t=>t.id)).size,startingTasks.length);assert.ok(startingTasks.some(t=>t.status==='Open')&&startingTasks.some(t=>t.status==='Completed'));for(const t of startingTasks){if(['Academic intervention','Fee follow-up','Family support history'].includes(t.kind)){const s=learnerById.get(t.scope);assert.ok(s,t.scope);if(t.kind==='Academic intervention')assert.ok(s.present[t.period]<24||s.marks[t.period].some(m=>m<60));if(t.kind==='Fee follow-up')assert.ok(feePosition(s,t.period).overdue>0)}}const homeQuality=await readFile('dist/index.html','utf8');assert.doesNotMatch(homeQuality,/6 of 10 sample lessons completed/);assert.match(homeQuality,/data-icon="online-learning"/);console.log('Verified sample action referential integrity and removal of unlinked homepage progress.');
+
+// P01: independent cross-scope and source reconciliation.
+const p01=await import('../.prerender/entry-server.js');
+const campusNames=[...new Set(initialLearners.map(s=>s.campus))],streamNames=Object.keys(subjects);
+assert.equal(campusNames.length,9);assert.equal(streamNames.length,4);
+let cohortChecks=0;
+for(const c of campusNames)for(const stream of streamNames)for(const year of [1,2])for(const month of [0,1,2,3,4,5]){
+ const rs=initialLearners.filter(s=>s.campus===c&&s.stream===stream&&s.year===year),a=rs.filter(s=>s.batch==='A'),b=rs.filter(s=>s.batch==='B');
+ assert.ok(rs.length>0&&a.length>0&&b.length>0);assert.equal(a.length+b.length,rs.length);
+ const present=rs.reduce((n,s)=>n+s.present[month],0),marks=rs.reduce((n,s)=>n+s.marks[month].reduce((x,y)=>x+y,0),0);
+ assert.ok(Math.abs(p01.attendanceRate(rs,month)-100*present/(rs.length*30))<1e-9);
+ assert.ok(Math.abs(p01.assessmentRate(rs,month)-100*marks/(rs.length*300))<1e-9);
+ assert.ok(Math.abs(p01.attendanceRate(rs,month)-(p01.attendanceRate(a,month)*a.length+p01.attendanceRate(b,month)*b.length)/rs.length)<1e-9);
+ cohortChecks++;
+}
+const digital=initialLeads.filter(p01.isDigital),physical=initialLeads.filter(l=>!p01.isDigital(l));
+assert.equal(digital.length+physical.length,initialLeads.length);
+for(const l of initialLeads){assert.ok((p01.isDigital(l)?p01.onlineStages:p01.campusStages).includes(l.status));assert.ok(l.created&&Number.isFinite(Date.parse(l.created)));if(l.convertedAt){assert.ok(l.convertedAt>=l.created);assert.ok(Number.isFinite(Date.parse(l.convertedAt)));}assert.equal(l.status==='Converted',!!l.convertedAt);assert.ok(p01.isDigital(l)||campusNames.includes(l.campus));if(p01.isDigital(l))assert.equal(l.source,'Online');if(p01.isDueLead(l))assert.ok(p01.isOpenLead(l));}
+for(const c of [...campusNames,'All campuses','Not decided'])assert.deepEqual(p01.filterAdmissions(initialLeads,'Online coaching',c,'Walk-in','All courses').map(l=>l.id),digital.map(l=>l.id));
+for(const c of campusNames){const all=p01.filterAdmissions(initialLeads,'Campus admissions',c,'All sources','All courses'),online=p01.filterAdmissions(initialLeads,'Campus admissions',c,'Online','All courses'),walk=p01.filterAdmissions(initialLeads,'Campus admissions',c,'Walk-in','All courses');assert.equal(all.length,online.length+walk.length);}
+const orders=p01.confirmedOnlineOrders();assert.equal(new Set(orders.map(o=>o.id)).size,orders.length);assert.equal(orders.length,digital.filter(l=>l.status==='Converted').length);
+for(let month=0;month<6;month++){const receipts=orders.filter(o=>o.month===month).reduce((n,o)=>n+o.fee,0);assert.equal(receipts,ledger.filter(r=>r.channel==='Online').reduce((n,r)=>n+r.receipts[month],0));}
+const baseline=JSON.parse(await readFile('docs/P00_ROUTE_BASELINE.json','utf8'));assert.deepEqual([...urls].sort(),baseline.routes.map(r=>r.path).sort());
+console.log('P01 reconciliation: '+JSON.stringify({cohortMonthChecks:cohortChecks,learners:initialLearners.length,campusEnquiries:physical.length,onlineEnquiries:digital.length,confirmedOrders:orders.length,onlineReceipts:orders.reduce((n,o)=>n+o.fee,0),annualCampusFees:ledger.filter(r=>r.channel==='Campus').reduce((n,r)=>n+r.billed,0),campusCollected:ledger.filter(r=>r.channel==='Campus').reduce((n,r)=>n+r.receipts.reduce((a,b)=>a+b,0),0),routes:urls.size}));

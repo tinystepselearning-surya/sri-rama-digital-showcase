@@ -5,7 +5,7 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 | Phase | Status | Acceptance evidence |
 |---|---|---|
 | 00 Engineering baseline | Closed — verified starting gate; release reproducibility open until phase 08 | b9c24f925e159b2f2face40c48b4d811f2612496; CI 46004577690 and 46004569595 success; each candidate and hosted audit 314 checks, zero issues. Hosted route audit does not prove exact deployed commit. Additional evidence: [P00 baseline closure](P00_BASELINE_CLOSURE.md), [route inventory](P00_ROUTE_BASELINE.json), run 46005034589. |
-| 01 Data realism & integrity | In progress | Source-backed metric dictionary; all periods and campus/stream scopes reconcile; lead stage and date invariants; no unsupported stats; seeded tasks valid; separate current snapshot vs historical data; no chart misrepresentation. |
+| 01 Data realism & integrity | Implementation candidate — verification pending | Source-backed metric dictionary; all periods and campus/stream scopes reconcile; lead stage and date invariants; no unsupported stats; seeded tasks valid; separate current snapshot vs historical data; no chart misrepresentation. |
 | 02 Institutional website excellence | Pending | Page inventory reviewed; positive source-backed factual copy; consistent campus labels and contacts; no invented institutional achievements; distinct campus/programme pages; no placeholders presented as facts. |
 | 03 Premium UX/UI & design consistency | Pending | Consistent semantic icons, spacing, type, colours, card/table patterns; inspect representative page templates and page-level exceptions; actual analytical visuals only. |
 | 04 Enterprise workspace excellence | Pending | Founder actionability; Centre Head scope; campus vs online CRM; family and learner-specific workflows; reliable empty states and filter behavior; role-specific visual hierarchy. |
@@ -22,3 +22,5 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 - Avoid exposing student examination identifiers in public artwork. Noindex is not privacy or authorization.
 - The fresh baseline hosted audit was successful; the latest development candidate is also successful. Whether they are byte-identical is not established.
 - No deployment, merge to main, or changes to Tiny Steps in the phase 00/01 increment.
+
+P01 metric definitions and candidate corrections: [P01_METRIC_DICTIONARY.md](P01_METRIC_DICTIONARY.md). Gate remains open until exact candidate CI evidence is recorded.
