@@ -7,3 +7,7 @@ P05-A verified in both runs 46010178626 and 46010170321. Paper lab now uses 60 s
 
 ### P05-B verification repair
 Candidate 30083aa388b965bc71e76422c2f4969e5efe76dc failed browser verification at exact Subject label lookup (run 46010780343; repeated in 46010789271). Build, static checks and both route audits passed. Added explicit accessible names matching the visible paper-lab labels; retained the failing exact Subject lookup and added unique combobox checks for all five controls. Extended browser regression to confirm related correct practice retains feedback without clearing the original mistake, then original correct retry resolves it. Exact repair candidate verification pending. No changes to route inventory, pricing, assessment selection, or persistence; no deployment.
+
+
+### P05-B browser selector repair
+Both runs 46011349969 and 46011359765 reached the mistake notebook after the five accessible paper-filter checks, Commerce format/availability, generation and answer-key checks. Both failed strict locator matching because the same question appears in the review entry and nested retry content. The browser test now targets the review's own bold question text, requires a single matching entry, verifies its continued presence after related practice and its removal after the correct original retry. No assertions bypassed or application code changed. Exact new candidate verification pending; no deployment.
