@@ -6,7 +6,7 @@ export const campuses = [
     "mode": "Day campus",
     "area": "Vivek Nagar, Kukatpally",
     "address": "H.No. 12-6-2/272/1F, 2F, 3F",
-    "intro": "For families exploring a day-college option in Kukatpally, this profile brings together the location, academic pathways and questions to discuss before a visit."
+    "intro": "A day-college option in Vivek Nagar for students balancing focused academic preparation with daily life at home."
   },
   {
     "id": "campus-nizampet",
@@ -15,7 +15,7 @@ export const campuses = [
     "mode": "Day & semi residential",
     "area": "Mitra Hills, Nizampet",
     "address": "Plot 197, High Tension Line Road",
-    "intro": "Explore a published day and semi-residential option in Nizampet. Compare study schedules, travel and the actual semi-residential arrangements with the admissions team."
+    "intro": "A choice of day and semi-residential study in Mitra Hills, offering families different ways to organise their study routine."
   },
   {
     "id": "campus-mehdipatnam",
@@ -24,7 +24,7 @@ export const campuses = [
     "mode": "Day campus",
     "area": "Opposite Mehdipatnam Bus Depot",
     "address": "H.No. 12-2-830/7/A/1",
-    "intro": "A day-campus profile for families considering the Mehdipatnam area. Use the visit checklist to discuss course availability and the daily study routine."
+    "intro": "A day-college option near Mehdipatnam Bus Depot for families exploring accessible intermediate education."
   },
   {
     "id": "campus-miyapur-ac",
@@ -33,7 +33,7 @@ export const campuses = [
     "mode": "A/C residential",
     "area": "Mathrusree Nagar, Miyapur",
     "address": "Plots 130–131, Gate 3, beside Bajaj Electronics",
-    "intro": "Explore the published A/C residential entry in Miyapur. Confirm accommodation eligibility directly: the original contact page contains conflicting gender labels."
+    "intro": "An air-conditioned residential option in Mathrusree Nagar. Speak with admissions to confirm current accommodation eligibility and arrangements."
   },
   {
     "id": "campus-gokul-non-ac",
@@ -42,7 +42,7 @@ export const campuses = [
     "mode": "Boys · non-A/C",
     "area": "Venkata Ramana Colony, Kukatpally",
     "address": "5/614, Venkata Ramana Colony",
-    "intro": "The published non-A/C accommodation entry is presented separately so families can compare residential options and ask about room arrangements and daily supervision."
+    "intro": "A non-air-conditioned boys’ residential option in Venkata Ramana Colony, for families exploring accommodation and academic preparation together."
   },
   {
     "id": "campus-gokul-ac",
@@ -51,7 +51,7 @@ export const campuses = [
     "mode": "Boys · A/C",
     "area": "Venkata Ramana Colony, Kukatpally",
     "address": "5/614, Venkata Ramana Colony",
-    "intro": "Explore the published A/C residential option at Gokul. Confirm current room availability, residential fees and study arrangements before making a choice."
+    "intro": "An air-conditioned boys’ residential option in Venkata Ramana Colony. Explore the residential format and discuss study arrangements with admissions."
   },
   {
     "id": "campus-gokul-semi-ac",
@@ -60,7 +60,7 @@ export const campuses = [
     "mode": "Boys · semi-A/C",
     "area": "Venkata Ramana Colony, Kukatpally",
     "address": "5/614, Venkata Ramana Colony",
-    "intro": "This separate profile helps families compare the published semi-A/C option with the other Gokul accommodation entries. Confirm what semi-A/C means in practice."
+    "intro": "A semi-air-conditioned boys’ residential option at Gokul. Families can explore the accommodation format alongside the institution’s academic pathways."
   },
   {
     "id": "campus-miyapur-girls",
@@ -69,7 +69,7 @@ export const campuses = [
     "mode": "Girls · semi-A/C & non-A/C",
     "area": "Calvary Road, Miyapur",
     "address": "Plots 966–967, Gate 3, Road 7",
-    "intro": "Explore the published girls' residential entry at Calvary Road. Discuss room types, student support, supervision and visiting arrangements with authorised staff."
+    "intro": "A girls’ residential option near Calvary Road with semi-air-conditioned and non-air-conditioned accommodation formats."
   },
   {
     "id": "campus-gudimalkapur",
@@ -78,7 +78,7 @@ export const campuses = [
     "mode": "Day campus",
     "area": "SBI Colony, Gudimalkapur",
     "address": "12-2-417/6/B, Mehdipatnam Road, near City Union Bank",
-    "intro": "A day-campus profile for families exploring Gudimalkapur. Confirm the current campus address, programmes and visiting times before travelling."
+    "intro": "A day-college option in SBI Colony for families exploring intermediate education in and around Gudimalkapur."
   }
 ];
 export const methods = [

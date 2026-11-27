@@ -16,7 +16,7 @@ export function CampusOperations({page,section,campus,learners,tasks,setTasks,we
  const findTask=(s:Learner)=>tasks.find(t=>t.scope===s.id&&t.kind===kind&&t.period===week);
  const risk=(s:Learner)=>s.present[week]<24||s.marks[week].some(v=>v<60);
  const title=(s:Learner)=>kind==='Fee follow-up'?'Review overdue annual fee instalments':s.present[week]<24?'Review attendance and learning support':'Plan subject revision';
- const add=(s:Learner)=>setTasks(prev=>prev.some(t=>t.scope===s.id&&t.kind===kind&&t.period===week)?prev:[...prev,{id:String(prev.length+1),scope:s.id,kind,title:title(s),status:'Open',owner:kind==='Fee follow-up'?'Accounts team':'Academic team',due:'2026-12-04',period:week}]);
+ const add=(s:Learner)=>setTasks(prev=>prev.some(t=>t.scope===s.id&&t.kind===kind&&t.period===week)?prev:[...prev,{id:String(Math.max(0,...prev.map(t=>Number(t.id)||0))+1),scope:s.id,kind,title:title(s),status:'Open',owner:kind==='Fee follow-up'?'Accounts team':'Academic team',due:'2026-12-04',period:week}]);
  const toggle=(t:Task)=>setTasks(prev=>prev.map(x=>x.id===t.id?{...x,status:x.status==='Open'?'Completed':'Open'}:x));
  const relevant=roster.filter(s=>section==='interventions'?risk(s)||!!findTask(s):section==='recovery'?feePosition(s,week).overdue>0||!!findTask(s):true);
  const rows=relevant.filter(s=>(stream==='All streams'||s.stream===stream)&&(year==='All years'||String(s.year)===year)&&s.id.toLowerCase().includes(query.toLowerCase())&&(filter==='All'||(filter==='Not started'?!findTask(s):findTask(s)?.status===filter))).sort((a,b)=>section==='recovery'?feePosition(b,week).overdue-feePosition(a,week).overdue:section==='interventions'?a.present[week]-b.present[week]||Math.min(...a.marks[week])-Math.min(...b.marks[week]):a.id.localeCompare(b.id));
