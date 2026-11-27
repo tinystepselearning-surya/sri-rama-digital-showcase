@@ -30,3 +30,6 @@ All mock tests, practice, flashcards, reports and explanations are free without 
 
 ## Commercial opportunity scenario and route audit
 Added founder digital growth assumptions for free-resource reach, optional coaching uptake and annual/crash mix. Gross hypothetical coaching charges only; not actual collections or conversion measurement. Examination interest now carried into sample enquiry. Static internal-link audit verifies all generated local links against registered routes. Remaining: public source privacy remediation for original posters with student identifiers; faculty/campus factual signoff; proper content review; full browser/mobile verification; approved deployment. No paid test products or test receipts.
+
+## Admissions concierge increment
+Public-only floating website assistant and simulated WhatsApp chat, right-side quick contact/admissions shortcuts, three-step clickable enquiry wizard, optional free learning links, channel/intent attribution in the shared CRM. No live AI, WhatsApp transport or real PII. Chart tooltip text consolidated to single strings after route-specific hydration diagnostics pointed to SVG title nodes. Browser regression added; release gated on CI.
