@@ -15,3 +15,6 @@ Dedicated sidebar application shell for all six roles; public header/footer remo
 
 ## Enterprise iteration B — implemented, verification pending
 Six monthly academic samples May–October for 576 fictional MPC learners (30 scheduled sample sessions per month; not total institution attendance), campus matrix and drill-through, severity-ordered full exception queue, connected teacher edits for attendance/marks and canned feedback, lead search/ownership/follow-up queue, parent feedback, sample exam countdown and review flags. No actual messaging or personal information. Digital product leads route to Digital academy. Multi-stream comparability, full LMS, finance-to-enrolment reconciliation, mature lead funnel, full assessments and AI prototype remain future scope. Verify build and interactive routes before any deployment.
+
+## Enterprise iteration C — implemented, verification pending
+Teacher and campus operational panels moved ahead of charts. Three authored learning previews with session-only completion, rule-based nine-question paper lab with answer key and print, static route/shell/media/build checks and build-only GitHub Actions workflow. No real AI, no deployment. Full learning course material and production exams remain outside the demo.

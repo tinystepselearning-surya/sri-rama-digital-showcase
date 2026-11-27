@@ -1,0 +1,19 @@
+name: Showcase build verification
+on:
+  pull_request:
+  push:
+    branches: [dev/showcase-v1]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.1'
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: node scripts/verify-showcase.mjs

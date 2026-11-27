@@ -1,0 +1,26 @@
+import React,{useState} from 'react';
+const bank=[
+ {subject:'Mathematics',topic:'Algebra',level:'Foundation',q:'Solve 2x + 5 = 17.',a:'x = 6; subtract 5 then divide by 2.'},
+ {subject:'Mathematics',topic:'Algebra',level:'Application',q:'Find the roots of x² − 5x + 6 = 0.',a:'2 and 3; factor as (x − 2)(x − 3).'},
+ {subject:'Mathematics',topic:'Algebra',level:'Application',q:'If x + 1/x = 3, find x² + 1/x².',a:'7; square the original expression and subtract 2.'},
+ {subject:'Physics',topic:'Motion',level:'Foundation',q:'A body travels 120 m in 20 s at constant speed. Find its speed.',a:'6 m/s; distance divided by time.'},
+ {subject:'Physics',topic:'Motion',level:'Application',q:'A body starts from rest and accelerates at 2 m/s² for 5 s. Find the final speed.',a:'10 m/s; v = u + at.'},
+ {subject:'Physics',topic:'Motion',level:'Application',q:'A body starts from rest with constant acceleration 4 m/s². How far does it move in 3 s?',a:'18 m; s = ut + ½at².'},
+ {subject:'Chemistry',topic:'Moles',level:'Foundation',q:'How many moles are in 18 g of water (molar mass 18 g/mol)?',a:'1 mol; mass divided by molar mass.'},
+ {subject:'Chemistry',topic:'Moles',level:'Application',q:'What mass is 0.5 mol of CO₂ (molar mass 44 g/mol)?',a:'22 g; amount multiplied by molar mass.'},
+ {subject:'Chemistry',topic:'Moles',level:'Application',q:'How many oxygen atoms are in 1 mol of CO₂?',a:'2 mol of oxygen atoms, approximately 1.204 × 10²⁴ atoms.'}
+];
+export function LearningPreview({hrefFor}:{hrefFor:(id:string)=>string}){
+ const [open,setOpen]=useState('Algebra');
+ const [done,setDone]=useState<string[]>([]);
+ const lessons=[['Algebra','Mathematics','A quadratic equation can be solved by factoring when suitable factors exist. For x² − 5x + 6 = 0, find two numbers that sum to −5 and multiply to 6: −2 and −3. The factors are (x − 2)(x − 3), so x = 2 or 3.'],['Motion','Physics','Acceleration is the rate of change of velocity. For constant acceleration use v = u + at. Starting from rest at 2 m/s² for 5 seconds gives v = 10 m/s.'],['Moles','Chemistry','A mole counts particles using Avogadro’s constant. To convert mass to amount, divide mass by molar mass. For 18 g of water with molar mass 18 g/mol, the amount is 1 mol.']];
+ const lesson=lessons.find(x=>x[0]===open)||lessons[0];
+ return <div className="bi-panel"><div className="bi-panel-title"><h2>Sample learning modules</h2><small>{done.length} / {lessons.length} completed this session</small></div><div className="study-module-layout"><div>{lessons.map(([t,s])=><button key={t} className={'lesson-row '+(open===t?'selected':'')} onClick={()=>setOpen(t)}><span>{s}</span><b>{t}</b><small>{done.includes(t)?'Completed':'Preview lesson'}</small></button>)}</div><article><span className="eyebrow ink">{lesson[1]} · MINI LESSON</span><h3>{lesson[0]}</h3><p>{lesson[2]}</p><button className="btn primary" onClick={()=>setDone(prev=>prev.includes(open)?prev:[...prev,open])}>{done.includes(open)?'Completed ✓':'Mark lesson complete'}</button><a className="text-button" href={hrefFor('exam')}>Try practice assessment →</a><a className="text-button" href={hrefFor('paper-lab')}>Open question-paper lab →</a></article></div></div>
+}
+export function PaperLab({hrefFor}:{hrefFor:(id:string)=>string}){
+ const [subject,setSubject]=useState('Mathematics');
+ const [level,setLevel]=useState('All levels');
+ const [paper,setPaper]=useState<typeof bank>([]);
+ const [show,setShow]=useState(false);
+ return <section className="container section"><span className="eyebrow ink">ACADEMIC TOOLS / DEMONSTRATION</span><h1 className="page-title">Question-paper lab</h1><p className="intro">Rule-based prototype of an AI-assisted assessment workflow. Questions are selected from a small authored local bank; no external AI service is used.</p><div className="panel"><label>Subject<select value={subject} onChange={e=>setSubject(e.target.value)}>{['Mathematics','Physics','Chemistry'].map(s=><option key={s}>{s}</option>)}</select></label><label>Difficulty<select value={level} onChange={e=>setLevel(e.target.value)}>{['All levels','Foundation','Application'].map(s=><option key={s}>{s}</option>)}</select></label><button className="btn primary" onClick={()=>{setPaper(bank.filter(q=>q.subject===subject&&(level==='All levels'||q.level===level)));setShow(false)}}>Generate sample question paper</button></div>{paper.length>0&&<div className="panel paper-output"><h2>{paper[0].subject} · {paper.length} questions</h2>{paper.map((q,i)=><div key={q.q}><h3>{i+1}. {q.q}</h3><p>{q.topic} · {q.level}</p>{show&&<p><b>Answer:</b> {q.a}</p>}</div>)}<button className="btn outline" onClick={()=>setShow(!show)}>{show?'Hide answer key':'Reveal answer key'}</button><button className="btn outline" onClick={()=>window.print()}>Print preview</button></div>}<div className="actions"><a href={hrefFor('student')} className="text-button">Student workspace →</a><a href={hrefFor('dashboard-teacher')} className="text-button">Teacher workspace →</a></div></section>
+}
