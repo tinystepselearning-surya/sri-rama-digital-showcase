@@ -36,3 +36,6 @@ Public-only floating website assistant and simulated WhatsApp chat, right-side q
 
 ## Opportunity expansion increment
 Public programme comparison, location guide, FAQs, careers/alumni/partnership concept pages, daily sample challenge, formula library, chapter revision, and sixteen-outcome solution tour. Independent founder budget/action, admissions workload/channel, campus timetable/incident/milestones, teacher planning/assignments, parent archive/notices/support, student planner/mistakes/bookmarks/history sections. Teacher sample assignments shared with matching learner cohort in app session; all actions fictional. No day-level attendance fabricated, no actual operating costs or verified campaign attribution, no live scheduling, AI, recruitment or partnerships. Course module previews and milestones illustrative. Static route assertions and expanded browser scenarios added; verify latest candidate.
+
+## Verification follow-up
+Concierge candidate passed build/static checks. Browser stopped on an ambiguous NEET-UG button locator (background results carousel and open dialog). Scoped the dialog test to the native modal; added quick contact and admission shortcut open/close checks. No runtime errors observed prior to that locator failure; full hydration and mobile verification remains required.
