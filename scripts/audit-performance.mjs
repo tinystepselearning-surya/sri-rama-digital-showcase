@@ -17,7 +17,7 @@ try{
    const response=await page.goto(base+route,{waitUntil:'load',timeout:20000});assert.equal(response?.status(),200);await page.locator('h1').first().waitFor();await page.evaluate(()=>document.fonts.ready);
    const timing=await page.evaluate(()=>{const n=performance.getEntriesByType('navigation')[0];const resources=performance.getEntriesByType('resource').map(r=>({url:r.name,type:r.initiatorType,encoded:r.encodedBodySize,transfer:r.transferSize,duration:Math.round(r.duration)}));return {navigation:{domContentLoaded:Math.round(n.domContentLoadedEventEnd),load:Math.round(n.loadEventEnd),htmlEncoded:n.encodedBodySize},resources}});
    const hero=route==='/'?await page.locator('.results-stage-art img').evaluate(i=>({loading:i.loading,priority:i.fetchPriority,src:i.getAttribute('src')})):null;
-   if(hero){assert.equal(hero.loading,'eager');assert.equal(hero.priority,'high');assert.equal(hero.src,'/media/neet-banner.webp');}
+   if(hero){assert.equal(hero.loading,'eager');assert.equal(hero.priority,'high');assert.equal(hero.src,'/media/iit-results.webp');}
    const images=await page.evaluate(async()=>{const items=[...document.images];for(const i of items)i.loading='eager';return Promise.all(items.map(async i=>{let ok=true;try{await i.decode()}catch{ok=false}return {src:i.getAttribute('src'),width:i.naturalWidth,height:i.naturalHeight,ok}}))});
    row={...row,...timing,hero,images};assert.ok(images.every(i=>i.ok&&i.width>0&&i.height>0),'Undecodable image');assert.deepEqual(errors,[]);
   }catch(e){row.error=String(e)}finally{rows.push(row);console.log('COLD LOAD '+JSON.stringify({route,width,error:row.error,errors,resources:row.resources?.length,load:row.navigation?.load,images:row.images?.length}));await context.close()}
