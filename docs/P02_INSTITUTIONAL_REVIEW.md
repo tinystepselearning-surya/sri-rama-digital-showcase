@@ -12,3 +12,6 @@ Sources reopened 27 Nov 2026: https://sriraama.in/ (academic direction and locat
 - Online/free learning and digital opportunities: retain proposed/sample disclosures; educational content accuracy and depth P05, UX P03.
 ## Open issues
 Physical image inspection, consent, exam identifier redaction and exact artwork dates are not verified. Existing public artwork and repository reference files unchanged; this is a release blocker for broader public sharing until reviewed (P08), not waived by noindex. Campus-specific programme allocations, room facilities, actual schedules and staff roster not independently verified; keep confirmation language. No new route or pricing changes. Source-level review by page family, not subjective screenshot review of every route. Candidate tests pending.
+
+## Educational-depth extension
+Initial P02 candidate passed both CI runs (46006759421, 46006752204). Owner clarified educational substance is the priority; new framework and examples added to existing pages, no expansion of routes. See P02_EDUCATIONAL_FRAMEWORK.md.
