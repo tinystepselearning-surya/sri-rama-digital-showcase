@@ -19,3 +19,6 @@ export {attendanceRate,assessmentRate,learnerScore,scheduledSessions,assessmentM
 export {confirmedOnlineOrders,filterAdmissions,isOpenLead,isDueLead,campusStages,onlineStages,isDigital,courseKind} from './admissions-data';
 
 export {learnerAssignments,assignmentDone,toggleAssignment} from './assignment-state';
+
+export {taskDue,executiveActions,campusActionSummary,taskDefaults} from './operational-state';
+export {counsellorNames,counsellorOf,matchesCounsellor,sortFollowups} from './admissions-data';
