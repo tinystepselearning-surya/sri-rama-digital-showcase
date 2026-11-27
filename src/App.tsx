@@ -59,9 +59,150 @@ const programmes = [
 ];
 const courses = [{title:'BITSAT preparation',detail:'Crash course concept',price:'Illustrative'},{title:'JEE preparation',detail:'Annual online programme',price:'₹9,999'},{title:'NEET preparation',detail:'Annual online programme',price:'₹9,999'},{title:'TG EAPCET revision',detail:'Crash course concept',price:'Illustrative'}];
 const questions = [
- {q:'If x + 7 = 15, what is x?',opts:['6','7','8','9'],correct:2,why:'Subtract 7 from both sides: x = 8.'},
- {q:'What is the SI unit of force?',opts:['Joule','Newton','Watt','Pascal'],correct:1,why:'Force is measured in newtons (N).'},
- {q:'Which organelle is the main site of photosynthesis?',opts:['Nucleus','Ribosome','Mitochondrion','Chloroplast'],correct:3,why:'Chloroplasts contain chlorophyll and carry out photosynthesis.'}
+  {
+    "subject": "Mathematics",
+    "q": "Solve 2x + 5 = 17.",
+    "opts": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "correct": 2,
+    "why": "Subtract 5 and divide by 2."
+  },
+  {
+    "subject": "Mathematics",
+    "q": "What are the roots of x² − 5x + 6 = 0?",
+    "opts": [
+      "1 and 6",
+      "2 and 3",
+      "−2 and −3",
+      "3 and 5"
+    ],
+    "correct": 1,
+    "why": "Factor as (x − 2)(x − 3)."
+  },
+  {
+    "subject": "Mathematics",
+    "q": "If x + 1/x = 3, find x² + 1/x².",
+    "opts": [
+      "5",
+      "7",
+      "9",
+      "11"
+    ],
+    "correct": 1,
+    "why": "Square the equation and subtract 2."
+  },
+  {
+    "subject": "Mathematics",
+    "q": "What is the derivative of x³?",
+    "opts": [
+      "x²",
+      "3x",
+      "3x²",
+      "x⁴/4"
+    ],
+    "correct": 2,
+    "why": "Use the power rule."
+  },
+  {
+    "subject": "Physics",
+    "q": "What is the SI unit of force?",
+    "opts": [
+      "Joule",
+      "Newton",
+      "Watt",
+      "Pascal"
+    ],
+    "correct": 1,
+    "why": "Force is measured in newtons."
+  },
+  {
+    "subject": "Physics",
+    "q": "A body travels 120 m in 20 s at constant speed. Find its speed.",
+    "opts": [
+      "4 m/s",
+      "5 m/s",
+      "6 m/s",
+      "8 m/s"
+    ],
+    "correct": 2,
+    "why": "Speed = distance/time."
+  },
+  {
+    "subject": "Physics",
+    "q": "A body starts from rest at 2 m/s² for 5 s. Find its final speed.",
+    "opts": [
+      "2 m/s",
+      "5 m/s",
+      "10 m/s",
+      "25 m/s"
+    ],
+    "correct": 2,
+    "why": "v = u + at = 10 m/s."
+  },
+  {
+    "subject": "Physics",
+    "q": "What is the kinetic energy of a 2 kg body moving at 3 m/s?",
+    "opts": [
+      "3 J",
+      "6 J",
+      "9 J",
+      "18 J"
+    ],
+    "correct": 2,
+    "why": "Kinetic energy = ½mv² = 9 J."
+  },
+  {
+    "subject": "Chemistry",
+    "q": "How many moles are in 18 g of water (molar mass 18 g/mol)?",
+    "opts": [
+      "0.5",
+      "1",
+      "2",
+      "18"
+    ],
+    "correct": 1,
+    "why": "Divide mass by molar mass."
+  },
+  {
+    "subject": "Chemistry",
+    "q": "What mass is 0.5 mol of CO₂ (molar mass 44 g/mol)?",
+    "opts": [
+      "11 g",
+      "22 g",
+      "44 g",
+      "88 g"
+    ],
+    "correct": 1,
+    "why": "Mass = amount × molar mass."
+  },
+  {
+    "subject": "Chemistry",
+    "q": "Which of these is a noble gas?",
+    "opts": [
+      "Oxygen",
+      "Nitrogen",
+      "Argon",
+      "Chlorine"
+    ],
+    "correct": 2,
+    "why": "Argon is a group 18 noble gas."
+  },
+  {
+    "subject": "Chemistry",
+    "q": "What is the atomic number of carbon?",
+    "opts": [
+      "4",
+      "6",
+      "8",
+      "12"
+    ],
+    "correct": 1,
+    "why": "Carbon has six protons."
+  }
 ];
 export function App({initialPage='home'}:{initialPage?:Page}){
  const [page,setPage]=useState<Page>(initialPage);
@@ -75,7 +216,7 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const [answers,setAnswers]=useState<Record<number,number>>({});
  const [submitted,setSubmitted]=useState(false);
  const [examIndex,setExamIndex]=useState(0);
- const [seconds,setSeconds]=useState(180);
+ const [seconds,setSeconds]=useState(900);
  const [review,setReview]=useState<number[]>([]);
  useEffect(()=>{if(page!=='exam'||submitted||seconds<=0)return;const timer=window.setTimeout(()=>{setSeconds(s=>Math.max(0,s-1));if(seconds===1)setSubmitted(true)},1000);return()=>window.clearTimeout(timer)},[page,submitted,seconds]);
  const navigate=(next:Page)=>{if(next===page){setMenu(false);return;}history.pushState({},'',hrefFor(next));setPage(next);setMenu(false);window.scrollTo(0,0);};
@@ -84,8 +225,8 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const handleNavigation=(e:React.MouseEvent)=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=(e.target as HTMLElement).closest('a');if(!a||a.target||a.hasAttribute('download'))return;const dest=new URL(a.href,location.href);if(dest.origin!==location.origin||dest.hash||dest.search)return;const next=Object.keys(routes).find(k=>routes[k][0]===dest.pathname);if(next){e.preventDefault();navigate(next);}};
  const score=questions.filter((q,i)=>answers[i]===q.correct).length;
  const internal=page==='management'||page==='platform'||page==='student'||page.startsWith('dashboard-');
- if(internal)return <div className="site enterprise" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to workspace</a><main id="main" tabIndex={-1}><Dashboard page={page==='management'?'dashboard-admissions':page} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor}/></main></div>;
- return <div className="site" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to main content</a><div className="utility"><div className="container utility-inner"><span>INSTITUTIONAL WEBSITE SHOWCASE</span><div><a href={hrefFor('resources')}>For parents</a><a href={hrefFor('support')}>For students</a><a href={hrefFor('platform')}>Explore Digital Platform ↗</a></div></div></div>
+ if(internal)return <div className="site enterprise" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to workspace</a><main id="main" tabIndex={-1}><Dashboard key={page} page={page==='management'?'dashboard-admissions':page} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor}/></main></div>;
+ return <div className="site" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to main content</a><div className="utility"><div className="container utility-inner"><span>INSTITUTIONAL WEBSITE SHOWCASE</span><div><a href={hrefFor('resources')}>For parents</a><a href={hrefFor('founder')}>Leadership</a><a href={hrefFor('support')}>For students</a><a href={hrefFor('platform')}>Explore Digital Platform ↗</a></div></div></div>
  <header><div className="container masthead"><a className="brand" href={hrefFor('home')}><img className="brand-image" src="/media/logo.jpg" width={300} height={108} alt="Sri Raama Educational Institutions — Everything You Need to Succeed"/></a><span className="masthead-line">Intermediate education & competitive examination preparation</span><a className="btn primary header-cta" href={hrefFor('admissions')}>Admissions ↗</a><button className="menu-toggle" onClick={()=>setMenu(!menu)} aria-expanded={menu} aria-controls="navigation">Menu {menu?'−':'+'}</button></div><nav id="navigation" className={menu?'open':''} aria-label="Main navigation"><div className="container nav-inner">{nav.map(([id,label])=><a key={id} href={hrefFor(id)} aria-current={page===id?'page':undefined}>{label}</a>)}</div></nav></header>
  <main id="main" tabIndex={-1}>
  {page==='home'&&<><section className="hero"><div className="container hero-inner"><div className="hero-copy"><span className="eyebrow">THE NEXT CHAPTER STARTS HERE</span><h1>Education that<br/>shapes <em>tomorrow.</em></h1><p>Discover your strengths, build a solid academic foundation and take the next step towards the future you imagine.</p><div className="actions"><a className="btn primary" href={hrefFor('programmes')}>Explore academics →</a><a className="btn outline" href={hrefFor('admissions')}>Admissions</a></div><div className="hero-foot">INTERMEDIATE EDUCATION <span> / </span> COMPETITIVE EXAM PREPARATION</div></div><figure className="hero-photo"><img src="/media/classroom.jpg" width={740} height={493} alt="Students studying in a Sri Raama classroom" fetchPriority="high"/><figcaption><span>THE SRI RAAMA EXPERIENCE</span><strong>Everything You Need to Succeed.</strong></figcaption></figure></div></section>
@@ -101,8 +242,8 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  {page==='paper-lab'&&<PaperLab hrefFor={hrefFor}/>}
  {(page==='academy'||page.startsWith('online-'))&&<Academy key={page} page={page} hrefFor={hrefFor} onEnquiry={product=>setLeads(prev=>[...prev,{id:Math.max(100,...prev.map(x=>x.id))+1,programme:'Online preparation',campus:'Digital academy',status:'New',source:'Online',created:'2026-11-27',activity:['Sample enquiry created 2026-11-27'],product}])}/>}
  {page==='admissions'&&<section className="container section"><PageIntro tag="Admissions journey" title="Take the first step." text="Explore the admissions process and try a sample programme enquiry. No personal information is collected."/><div className="admission-steps">{['Choose a pathway','Explore a location','Discuss options','Review requirements'].map((t,i)=><div key={t}><b>0{i+1}</b><span>{t}</span></div>)}</div><form className="panel" onSubmit={e=>{e.preventDefault();const id=Math.max(100,...leads.map(x=>x.id))+1;setLeads([...leads,{id,programme,campus,status:'New',source:'Online',created:'2026-11-27',activity:['Sample enquiry created 2026-11-27']}]);setNotice('Sample enquiry #'+id+' created. Open Admissions Dashboard to see it.');}}><label>Preferred programme<select value={programme} onChange={e=>setProgramme(e.target.value)}><option>MPC</option><option>BiPC</option><option>MEC</option><option>CEC</option><option>Online preparation</option></select></label><label>Preferred campus<select value={campus} onChange={e=>setCampus(e.target.value)}>{campuses.map(x=><option key={x.id}>{x.name}</option>)}</select></label><button className="btn primary" type="submit">Create sample enquiry</button>{notice&&<p role="status" className="notice">{notice}</p>}<a href={hrefFor('dashboard-admissions')}>View admissions dashboard →</a></form></section>}
- {page==='exam'&&<section className="container section"><PageIntro tag="Assessment experience" title="Practice. Reflect. Improve." text="A short illustrative assessment; not an official examination or syllabus-aligned mock test."/><div className="panel exam">{submitted?<><h2>{score} / {questions.length} correct</h2>{questions.map((q,i)=><div className="review" key={q.q}><strong>{q.q}</strong><p>Your answer: {answers[i]===undefined?'Not answered':q.opts[answers[i]]}. Correct: {q.opts[q.correct]}.</p><p>{q.why}</p></div>)}<button className="btn primary" onClick={()=>{setAnswers({});setExamIndex(0);setSeconds(180);setReview([]);setSubmitted(false);}}>Try again</button></>:<><div className="exam-tools"><small>QUESTION {examIndex+1} OF {questions.length} · {Object.keys(answers).length} answered</small><strong aria-label="Time remaining">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</strong></div><div className="question-nav">{questions.map((q,i)=><button type="button" key={q.q} className={'question-chip '+(i===examIndex?'current ':'')+(answers[i]!==undefined?'answered ':'')+(review.includes(i)?'flagged':'')} onClick={()=>setExamIndex(i)} aria-label={'Question '+(i+1)+(review.includes(i)?', marked for review':'')}>{i+1}</button>)}<button className="btn outline" onClick={()=>setReview(prev=>prev.includes(examIndex)?prev.filter(i=>i!==examIndex):[...prev,examIndex])}>{review.includes(examIndex)?'Clear review flag':'Mark for review'}</button></div><h3>{questions[examIndex].q}</h3><fieldset><legend className="sr-only">Choose an answer</legend>{questions[examIndex].opts.map((opt,i)=><label className="option" key={opt}><input type="radio" name={'q'+examIndex} checked={answers[examIndex]===i} onChange={()=>setAnswers({...answers,[examIndex]:i})}/>{opt}</label>)}</fieldset><div className="actions"><button className="btn secondary" disabled={examIndex===0} onClick={()=>setExamIndex(examIndex-1)}>Previous</button>{examIndex<questions.length-1?<button className="btn primary" onClick={()=>setExamIndex(examIndex+1)}>Next →</button>:<button className="btn primary" onClick={()=>setSubmitted(true)}>Submit sample test</button>}</div></>}</div></section>}
- {(page==='management'||page==='platform'||page.startsWith('dashboard-'))&&<Dashboard page={page==='management'?'dashboard-admissions':page} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor}/>}
+ {page==='exam'&&<section className="container section"><PageIntro tag="Assessment experience" title="Practice. Reflect. Improve." text="A 12-question MPC practice assessment with a 15-minute active-session countdown. Not an official or syllabus-aligned mock exam."/><div className="panel exam">{submitted?<><h2>{score} / {questions.length} correct</h2><div className="exam-report"><div><small>Accuracy among attempted</small><strong>{Object.keys(answers).length?Math.round(score/Object.keys(answers).length*100)+'%':'—'}</strong></div><div><small>Unanswered</small><strong>{questions.length-Object.keys(answers).length}</strong></div><div><small>Active test time</small><strong>{Math.floor((900-seconds)/60)}m {(900-seconds)%60}s</strong></div></div><div className="exam-report">{['Mathematics','Physics','Chemistry'].map(subject=><div key={subject}><small>{subject}</small><strong>{questions.filter((q,i)=>q.subject===subject&&answers[i]===q.correct).length}/4</strong></div>)}</div>{questions.map((q,i)=><div className="review" key={q.q}><strong>{q.q}</strong><p>Your answer: {answers[i]===undefined?'Not answered':q.opts[answers[i]]}. Correct: {q.opts[q.correct]}.</p><p>{q.why}</p></div>)}<button className="btn primary" onClick={()=>{setAnswers({});setExamIndex(0);setSeconds(900);setReview([]);setSubmitted(false);}}>Try again</button></>:<><div className="exam-tools"><small>QUESTION {examIndex+1} OF {questions.length} · {Object.keys(answers).length} answered</small><strong aria-label="Time remaining">{Math.floor(seconds/60)}:{String(seconds%60).padStart(2,'0')}</strong></div><div className="question-nav">{questions.map((q,i)=><button type="button" key={q.q} className={'question-chip '+(i===examIndex?'current ':'')+(answers[i]!==undefined?'answered ':'')+(review.includes(i)?'flagged':'')} onClick={()=>setExamIndex(i)} aria-label={'Question '+(i+1)+(review.includes(i)?', marked for review':'')}>{i+1}</button>)}<button className="btn outline" onClick={()=>setReview(prev=>prev.includes(examIndex)?prev.filter(i=>i!==examIndex):[...prev,examIndex])}>{review.includes(examIndex)?'Clear review flag':'Mark for review'}</button></div><small>{questions[examIndex].subject}</small><h3>{questions[examIndex].q}</h3><fieldset><legend className="sr-only">Choose an answer</legend>{questions[examIndex].opts.map((opt,i)=><label className="option" key={opt}><input type="radio" name={'q'+examIndex} checked={answers[examIndex]===i} onChange={()=>setAnswers({...answers,[examIndex]:i})}/>{opt}</label>)}</fieldset><div className="actions"><button className="btn secondary" disabled={examIndex===0} onClick={()=>setExamIndex(examIndex-1)}>Previous</button>{examIndex<questions.length-1?<button className="btn primary" onClick={()=>setExamIndex(examIndex+1)}>Next →</button>:<button className="btn primary" onClick={()=>setSubmitted(true)}>Submit sample test</button>}</div></>}</div></section>}
+ {(page==='management'||page==='platform'||page.startsWith('dashboard-'))&&<Dashboard key={page} page={page==='management'?'dashboard-admissions':page} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor}/>}
  {page==='about'&&<section className="container section"><PageIntro tag="Our institution" title="Education with direction." text="Explore the Sri Raama institutional story, academic pathways and the proposed student experience."/><div className="story-split"><img src="/media/classroom.jpg" width={740} height={493} alt="Students learning in a Sri Raama classroom"/><div><span className="eyebrow ink">OUR MOTTO</span><h2>Everything You Need to Succeed.</h2><p>Clear learning pathways, meaningful feedback and an informed admissions experience are central to this website concept.</p><div className="actions"><a className="btn primary" href={hrefFor('founder')}>Founder & leadership →</a><a className="btn outline" href={hrefFor('team')}>Academic team</a></div></div></div><div className="editorial-grid">{[['Academic direction','Explore the intermediate and competitive examination pathways.','programmes'],['Student experience','Discover student support and campus life.','support'],['Campus discovery','Find the location that fits your needs.','campuses']].map(([t,d,p])=><article className="editorial-card" key={p}><h3>{t}</h3><p>{d}</p><a href={hrefFor(p)}>Explore →</a></article>)}</div></section>}
  {page==='founder'&&<section className="container section"><PageIntro tag="Founder & leadership" title="The vision behind Sri Raama" text="A dedicated space for the founder’s story, philosophy and message to students and families."/><div className="founder-layout"><figure className="founder-portrait"><img src="/media/founder.jpeg" width={1488} height={992} alt="Institution-supplied founder portrait"/><figcaption>Founder &amp; leadership · Sri Raama Educational Institutions</figcaption></figure><div><span className="eyebrow ink">LEADERSHIP PROFILE</span><h2>A commitment to education.</h2><p>Explore the leadership story and educational vision behind the institution. The approved founder biography and message will be added when supplied.</p><a href={hrefFor('about')} className="text-button">Explore our institution →</a></div></div><div className="quote-band"><small>INSTITUTIONAL MOTTO</small><h2>Everything You Need to Succeed.</h2></div></section>}
  {page==='resources'&&<section className="container section"><PageIntro tag="The parent journal" title="Informed choices. Stronger futures." text="Practical guidance for families navigating intermediate education, examination preparation and student wellbeing."/><JournalCards/><div className="final-cta"><div><h2>Have questions about admissions?</h2><a className="btn primary" href={hrefFor('admissions')}>Explore the admissions journey →</a></div></div></section>}

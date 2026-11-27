@@ -3,3 +3,7 @@ import {renderToString} from 'react-dom/server';
 import {App,routes} from './App';
 export {routes};
 export const render=(page:string)=>renderToString(<App initialPage={page}/>);
+
+export {initialLearners,tuition,subjects} from './model';
+export {initialLeads} from './dashboard';
+export {ledgerFor} from './finance';
