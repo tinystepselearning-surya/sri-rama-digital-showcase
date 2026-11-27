@@ -48,3 +48,6 @@ Annual net campus fee per learner, instalment schedule May–April, historical c
 
 ## Compact public navigation
 One institutional header row with original logo, discreet showcase label, seven grouped menus and one admissions CTA. Removed separate utility, masthead and examination rows; all major links retained in grouped menus or footer. Responsive disclosure navigation, outside click and Escape handling; independent enterprise shell untouched. Added desktop and mobile navigation regression checks.
+
+## Centre Head consolidation
+One campus-level management workspace replaces overlapping teacher and campus coordinator launchers. Campus overview aggregates all streams and years; cohort selection retained for comparable marks, academic records, faculty timetable and assignments. Campus-specific finance, admissions and parent support queues; family support request resolution shared within the demo session. Legacy teacher URLs resolve into Centre Head sections. Individual faculty accounts, daily attendance, actual timetables and campus authorization remain future production features. Added campus isolation and legacy route checks. Header desktop height regression corrected; exact candidate CI required.
