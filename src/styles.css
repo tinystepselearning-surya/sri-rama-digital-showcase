@@ -258,3 +258,6 @@
 .enterprise .enterprise-rail nav.workspace-nav-sheet{position:fixed;z-index:44;left:8px;right:8px;bottom:calc(72px + env(safe-area-inset-bottom,0px));max-height:65vh;max-height:65dvh;padding:12px;border-radius:12px;background:#142238;box-shadow:0 10px 40px #14223855;overflow-y:auto;overscroll-behavior:contain}
 .workspace-sheet-backdrop{display:block;position:fixed;inset:0;z-index:43;background:#14223855;border:0;cursor:pointer}.leadership-grid{grid-template-columns:minmax(0,1fr);gap:8px}.leadership-card{padding:10px}.leadership-campus-values{flex-basis:88px}.leadership-student,.leadership-campus{font-size:12px}
 }
+
+/* Compact native campus selector in shared enquiry wizard. */
+.wizard-campus-field{display:grid;gap:7px;margin:14px 0;min-width:0}.wizard-campus-field>span{display:flex;justify-content:space-between;align-items:center;gap:8px;color:#142238;font-size:13px;font-weight:700}.wizard-campus-field small{font-size:11px;color:#52647a;font-weight:400}.wizard-campus-field select{box-sizing:border-box;width:100%;min-width:0;max-width:100%;min-height:46px;padding:10px;border:1px solid #ccd6e0;border-radius:7px;background:#fff;color:#142238;font:inherit;font-size:16px}

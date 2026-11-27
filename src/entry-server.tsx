@@ -40,3 +40,5 @@ export {admissionHistory} from './admissions-data';
 export {enrollmentPlan} from './commercial-state';
 
 export {academicLeadership,highScoreMinimum,lowScoreLimit} from './academic-leadership';
+
+export {enquiryExamChoices,compatibleEnquiryExam} from './contact';
