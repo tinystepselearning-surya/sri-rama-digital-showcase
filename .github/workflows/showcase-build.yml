@@ -17,9 +17,13 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npm run build
       - run: node scripts/verify-showcase.mjs
+      - name: Build payload budgets
+        run: node scripts/verify-performance.mjs
       - run: npm install --no-save --package-lock=false playwright
       - run: npx playwright install --with-deps chromium
       - run: node scripts/verify-browser.mjs
+      - name: Cold-load resource verification
+        run: node scripts/audit-performance.mjs
       - name: Candidate page-by-page layout audit
         if: ${{ always() }}
         run: node scripts/audit-pages.mjs

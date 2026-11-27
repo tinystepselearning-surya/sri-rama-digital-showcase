@@ -10,7 +10,7 @@ Baseline: 27 November 2026. Scope: 157 registered routes, including five legacy 
 | 03 Premium UX/UI & design consistency | Engineering gate passed — visual review open | Consistent semantic icons, spacing, type, colours, card/table patterns; inspect representative page templates and page-level exceptions; actual analytical visuals only. |
 | 04 Enterprise workspace excellence | Engineering gate passed | Founder actionability; Centre Head scope; campus vs online CRM; family and learner-specific workflows; reliable empty states and filter behavior; role-specific visual hierarchy. |
 | 05 Online academy & educational quality | Engineering gate passed — independent educational review open | Verify every question/answer/explanation, chapter association, mock scoring and graph; original representative questions; clearly bounded samples; free policy and catalogue consistency. |
-| 06 Mobile, accessibility & performance | P06-A passed; P06-B implemented — verification pending | All 157 routes at 1440/390/360/768; keyboard interaction, focus and contrast review, browser resource/console checks; physical device and Safari review or explicit limitation; representative screenshots and page audit. |
+| 06 Mobile, accessibility & performance | P06-A/B passed; P06-C implemented — verification pending | All 157 routes at 1440/390/360/768; keyboard interaction, focus and contrast review, browser resource/console checks; physical device and Safari review or explicit limitation; representative screenshots and page audit. |
 | 07 End-to-end business demonstrations | Pending | Demonstrate prospect-to-CRM, campus academic record-to-parent, assignment-to-student, learner-specific mock/revision, action-to-founder, and fee reconciliation without live transactions; founder presentation runbook. |
 | 08 Final release & Firebase verification | Pending | Artwork permissions/identifier review (owner confirmation where needed), reproducible dependencies, release manifest and exact candidate verification; explicit deployment approval; hosted validation and rollback instructions. |
 
@@ -46,3 +46,6 @@ P05-B exact candidate 2c929b5c47b41d76a3a20a79f80ba0df63becaef: runs 46011716925
 
 
 P06-A exact candidate e53d400dbf888bd7b51eb16a870b6d74874a7815 passed runs 46012223046 and 46012231463. Run 46012223046 recorded 628 candidate/314 hosted checks, zero issues; mobile paper and public navigation workflows passed. P06-B adds keyboard focus after client-side routes, workspace Escape handling, visible focus, named practice topic and mock answer/flag states, and main/skip-link candidate checks. Verification pending. No deployment.
+
+
+P06-B exact candidate d1054cf5a6022309c018c0c63a225748c9529e0c passed both runs 46012801294 and 46012793760, including keyboard and assessment accessibility; 628 candidate/314 hosted checks zero issues in run 46012801294. P06-C records measured build baseline and introduces payload budgets, cold-load resource verification, scoped lazy/async image hints and candidate Firebase hashed-asset cache policy. Exact verification pending; no deployment. Performance timings are local observations, not production Core Web Vitals.
