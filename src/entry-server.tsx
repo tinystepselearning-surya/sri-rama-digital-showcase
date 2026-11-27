@@ -24,3 +24,6 @@ export {taskDue,executiveActions,campusActionSummary,taskDefaults} from './opera
 export {counsellorNames,counsellorOf,matchesCounsellor,sortFollowups} from './admissions-data';
 
 export {questionLevel,mockRows,questionReport} from './free-learning';
+
+export {paperBank,selectPaper} from './learning';
+export {revisionItems} from './revision-state';
