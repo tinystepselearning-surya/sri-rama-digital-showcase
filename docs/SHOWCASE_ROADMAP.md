@@ -54,3 +54,6 @@ One campus-level management workspace replaces overlapping teacher and campus co
 
 ## Connected family review
 Parent feedback/support requests now share a single task record with the Centre Head queue; parent reports show the returned resolution status. Parent and student workspaces share the chosen fictional learner across in-app navigation. Learner drill-through is limited to the selected cohort. Browser regression covers request creation, Centre Head resolution, parent readback and learner continuity. Session data is not persisted or authenticated.
+
+## Essential operating workflows
+Added read-only enrolled student register, explicit hypothetical seat capacity by stream and year (reconciles with roster), founder campus capacity comparison, individual academic/attendance interventions and overdue instalment follow-up register. Follow-up actions shared with founder campus accountability, separate from academic and financial records. No enrolment inferred from CRM conversion, no payment or mark mutation from action completion. Added static and browser checks. Fixed missing demo learner props on secondary Dashboard call. Scope remains browser-session demonstration, no production permissions or actual data.
