@@ -51,3 +51,6 @@ One institutional header row with original logo, discreet showcase label, seven 
 
 ## Centre Head consolidation
 One campus-level management workspace replaces overlapping teacher and campus coordinator launchers. Campus overview aggregates all streams and years; cohort selection retained for comparable marks, academic records, faculty timetable and assignments. Campus-specific finance, admissions and parent support queues; family support request resolution shared within the demo session. Legacy teacher URLs resolve into Centre Head sections. Individual faculty accounts, daily attendance, actual timetables and campus authorization remain future production features. Added campus isolation and legacy route checks. Header desktop height regression corrected; exact candidate CI required.
+
+## Connected family review
+Parent feedback/support requests now share a single task record with the Centre Head queue; parent reports show the returned resolution status. Parent and student workspaces share the chosen fictional learner across in-app navigation. Learner drill-through is limited to the selected cohort. Browser regression covers request creation, Centre Head resolution, parent readback and learner continuity. Session data is not persisted or authenticated.

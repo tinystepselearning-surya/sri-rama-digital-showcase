@@ -224,6 +224,7 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const [tasks,setTasks]=useState<Task[]>([]);
  const recordFree=(e:FreeEvent)=>setFreeEvents(prev=>[...prev,e]);
  const [learners,setLearners]=useState(initialLearners);
+ const [demoLearnerId,setDemoLearnerId]=useState(initialLearners[0].id);
  const [programme,setProgramme]=useState('MPC');
  const [examInterest,setExamInterest]=useState('Not specified');
  const [campus,setCampus]=useState(campuses[0].name);
@@ -242,7 +243,7 @@ export function App({initialPage='home'}:{initialPage?:Page}){
  const score=questions.filter((q,i)=>answers[i]===q.correct).length;
  const {role,section}=splitWorkspace(page);
  const internal=role==='management'||role==='platform'||role==='student'||role.startsWith('dashboard-');
- if(internal)return <div className="site enterprise" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to workspace</a><main id="main" tabIndex={-1}><Dashboard key={role} section={section} page={role==='management'?'dashboard-admissions':role} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor} freeEvents={freeEvents} recordFree={recordFree} tasks={tasks} setTasks={setTasks}/></main></div>;
+ if(internal)return <div className="site enterprise" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to workspace</a><main id="main" tabIndex={-1}><Dashboard key={role} demoLearnerId={demoLearnerId} setDemoLearnerId={setDemoLearnerId} section={section} page={role==='management'?'dashboard-admissions':role} leads={leads} setLeads={setLeads} learners={learners} setLearners={setLearners} hrefFor={hrefFor} freeEvents={freeEvents} recordFree={recordFree} tasks={tasks} setTasks={setTasks}/></main></div>;
  return <div className="site" data-page={page} onClick={handleNavigation}><a className="skip-link" href="#main">Skip to main content</a><InstitutionHeader page={page} hrefFor={hrefFor}/>
  <main id="main" tabIndex={-1}>
  {page==='home'&&<><ResultsHero hrefFor={hrefFor}/>
