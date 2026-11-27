@@ -27,3 +27,6 @@ Homepage now presents institution-supplied historical artwork, dedicated examina
 
 ## Free learning policy — supersedes earlier ₹999 test series proposal
 All mock tests, practice, flashcards, reports and explanations are free without registration. Eight paid coaching products remain; four old test-series routes are zero-fee resource entries. Exclude free resources entirely from finance ledger. Free learning centre, five mini-mock tracks, 18 authored questions, 12 revision cards, student subpages and founder session engagement. All resources are illustrative, not full-length or official exams. Responsive containment changes address prior mobile CI failure; verify on candidate. No personal information or production changes.
+
+## Commercial opportunity scenario and route audit
+Added founder digital growth assumptions for free-resource reach, optional coaching uptake and annual/crash mix. Gross hypothetical coaching charges only; not actual collections or conversion measurement. Examination interest now carried into sample enquiry. Static internal-link audit verifies all generated local links against registered routes. Remaining: public source privacy remediation for original posters with student identifiers; faculty/campus factual signoff; proper content review; full browser/mobile verification; approved deployment. No paid test products or test receipts.
