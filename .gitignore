@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.prerender/
+.firebase/
+.env
+.env.*
+*.log
+.DS_Store

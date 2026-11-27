@@ -1,0 +1,39 @@
+name: Showcase build verification
+on:
+  pull_request:
+  push:
+    branches: [dev/showcase-v1]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.22.1'
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: node scripts/verify-showcase.mjs
+      - name: Build payload budgets
+        run: node scripts/verify-performance.mjs
+      - run: npm install --no-save --package-lock=false playwright
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/verify-browser.mjs
+      - name: Cold-load resource verification
+        run: node scripts/audit-performance.mjs
+      - name: Candidate page-by-page layout audit
+        if: ${{ always() }}
+        run: node scripts/audit-pages.mjs
+      - name: Hosted page-by-page read-only audit
+        if: ${{ always() }}
+        continue-on-error: true
+        run: node scripts/audit-pages.mjs --hosted
+      - name: Upload numerical route audit
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: showcase-page-audit
+          path: audit-output/
